@@ -14,7 +14,7 @@ const Footer = () => {
 
         {/* Social Icons (Right) */}
         <div className="flex space-x-4 mt-4 md:mt-0 justify-center">
-          <a href="https://cz.linkedin.com/in/hynekcerny" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-700">
+          <a href="https://linkedin.com/in/hynekcerny" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-700">
             <FaLinkedin className="w-6 h-6" />
           </a>
           <a href="https://github.com/HynekCerny" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-700">
