@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="bottom-0 left-0 z-20 w-full p-4 border-t-2 bg-white border-gray-200 md:p-6">
       <div className="w-full mx-auto max-w-screen-xl flex flex-col md:flex-row md:items-center md:justify-between">
         {/* Copyright (Left) */}
-        <span className="text-md sm:text-center">
+        <span className="text-md text-center">
           © {new Date().getFullYear()}{" "}
           <a href="https://hynekcerny.cz/" className="hover:underline hover:text-blue-700">
             Hynek Černý
