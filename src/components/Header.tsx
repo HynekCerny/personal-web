@@ -12,11 +12,22 @@ const Header = () => {
     e.preventDefault();
     const id = targetId.replace("#", ""); // Remove # if present
 
-    const targetElement = id === "home" ? document.body : document.getElementById(id);
+    // const targetElement = id === "home" ? document.body : document.getElementById(id);
 
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    // if (targetElement) {
+    //   targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    // }
+
+    if (id === "home") {
+      // Scroll to 0 manually instead of using scrollIntoView
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      const targetElement = document.getElementById(id);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
+
     setIsOpen(false); // Close mobile menu after clicking
   };
 
