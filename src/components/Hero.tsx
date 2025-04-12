@@ -16,17 +16,18 @@ const Hero = () => {
                     <div className="flex justify-center md:justify-end space-x-4 mt-4 md:mt-0">
                         <button onClick={() => {
                             document.getElementById('experiences')?.scrollIntoView({ behavior: 'smooth' });
-                        }} 
-                        className="cursor-pointer px-4 lg:px-8 py-3 text-base lg:text-xl bg-white text-blue-700 border-2 border-blue-700 rounded-lg hover:bg-blue-100 transition-colors flex items-center space-x-2 mt-4 md:mt-0 justify-center">
+                        }}
+                            className="cursor-pointer px-4 lg:px-8 py-3 text-base lg:text-xl bg-white text-blue-700 border-2 border-blue-700 rounded-lg hover:bg-blue-100 transition-colors flex items-center space-x-2 mt-4 md:mt-0 justify-center">
                             <span>View Experience</span>
                         </button>
 
-                        <a href="https://linkedin.com/in/hynekcerny" target="_blank" rel="noopener noreferrer">
-                            <button className="cursor-pointer px-4 lg:px-8 py-3 text-base lg:text-xl bg-blue-700 text-white rounded-lg border-2 border-blue-700 hover:bg-blue-100 hover:text-blue-700 hover:border-blue-700 transition-colors flex items-center space-x-2 mt-4 md:mt-0 justify-center">
-                                <FaLinkedin className="w-6 h-6" />
-                                <span>Get in Touch</span>
-                            </button>
-                        </a>
+                        <button
+                            onClick={() => window.open('https://linkedin.com/in/hynekcerny', '_blank', 'noopener,noreferrer')}
+                            className="cursor-pointer px-4 lg:px-8 py-3 text-base lg:text-xl bg-blue-700 text-white rounded-lg border-2 border-blue-700 hover:bg-blue-100 hover:text-blue-700 hover:border-blue-700 transition-colors flex items-center space-x-2 mt-4 md:mt-0 justify-center"
+                        >
+                            <FaLinkedin className="w-6 h-6" />
+                            <span>Get in Touch</span>
+                        </button>
                     </div>
                 </div>
             </div>
