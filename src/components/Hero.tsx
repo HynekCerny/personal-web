@@ -29,7 +29,7 @@ const Hero = () => {
                         </p>
                     </div>
                     <div className="flex justify-center md:justify-end space-x-4 mt-4 md:mt-0">
-                        <button onClick={() => { handleClick }}
+                        <button onClick={handleClick}
                             className="cursor-pointer px-4 lg:px-8 py-3 text-base lg:text-xl bg-white text-blue-700 border-2 border-blue-700 rounded-lg hover:bg-blue-100 transition-colors flex items-center space-x-2 mt-4 md:mt-0 justify-center">
                             <span>View Experience</span>
                         </button>
