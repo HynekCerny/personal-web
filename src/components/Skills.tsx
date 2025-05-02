@@ -35,7 +35,7 @@ const Skills = () => {
     ];
 
     return (
-        <section id="skills" className="w-full justify-center pt-24 md:pt-24 lg:pt-24 bg-gradient-to-tr from-blue-100 to-white">
+        <section id="skills" className="fade-slide-in w-full justify-center pt-24 md:pt-24 lg:pt-24 bg-gradient-to-tr from-blue-100 to-white">
             
             <div className="container md:px-10 max-w-screen-xl mx-auto px-4">
                 <div className="flex flex-col items-center space-y-4 text-center">

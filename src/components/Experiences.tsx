@@ -3,7 +3,7 @@ import Experience from './Experience';
 
 export default function Experiences() {
     return (
-        <section id="experiences" className="w-full justify-center py-24 bg-muted">
+        <section id="experiences" className="fade-slide-in w-full justify-center py-24 bg-muted">
             <div className="container md:px-10 max-w-screen-xl mx-auto px-4">
                 <div className="flex flex-col items-center space-y-4 text-center">
                     <div className="space-y-2">

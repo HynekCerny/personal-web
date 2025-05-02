@@ -4,7 +4,7 @@ import { FaLinkedin } from "react-icons/fa6";
 const Contact = () => {
     return (
 
-        <section id="contact" className="w-full justify-center pb-24 pt-24 md:pt-24 lg:pt-24 bg-gradient-to-tr from-blue-100 to-white">
+        <section id="contact" className="fade-slide-in w-full justify-center pb-24 pt-24 md:pt-24 lg:pt-24 bg-gradient-to-tr from-blue-100 to-white">
 
             <div className="container md:px-10 max-w-screen-xl mx-auto px-4">
                 <div className="flex flex-col items-center space-y-4 text-center">

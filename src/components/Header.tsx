@@ -7,19 +7,12 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
-  // Smooth scrolling function
+  /* Smooth scrolling function */
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
     e.preventDefault();
     const id = targetId.replace("#", ""); // Remove # if present
 
-    // const targetElement = id === "home" ? document.body : document.getElementById(id);
-
-    // if (targetElement) {
-    //   targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
-    // }
-
     if (id === "home") {
-      // Scroll to 0 manually instead of using scrollIntoView
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       const targetElement = document.getElementById(id);
@@ -31,7 +24,7 @@ const Header = () => {
     setIsOpen(false); // Close mobile menu after clicking
   };
 
-  // Detect scrolling to add shadow to navbar
+  /* Detect scrolling to add shadow to navbar */
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -41,7 +34,7 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Detect which section is active
+  /* Detect which section is active */
   useEffect(() => {
     const sections = [
       { id: "about", name: "About Me" },

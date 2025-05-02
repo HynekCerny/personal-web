@@ -17,7 +17,7 @@ const Hero = () => {
     };
 
     return (
-        <section className="w-full flex flex-col items-center sm:items-start text-center sm:text-left mt-10 pt-24 md:pt-24 lg:pt-24 pb-20 bg-gradient-to-tr from-blue-100 to-white">
+        <section className="fade-in w-full flex flex-col items-center sm:items-start text-center sm:text-left mt-10 pt-24 md:pt-24 lg:pt-24 pb-20 bg-gradient-to-tr from-blue-100 to-white">
             <div className="container md:px-10 max-w-screen-xl mx-auto px-4 w-full">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
                     <div className="justify-self-center md:justify-self-start">

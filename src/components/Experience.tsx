@@ -11,11 +11,11 @@ interface Props {
 const Experience = ( {role, employer, duration, location, description} : Props) => {
     return (
         <div className="relative pl-8">
-        {/* Svislá čára */}
+        {/* Vertical line */}
         <div className="absolute left-0 top-1.5 bottom-0 w-0.5 bg-gray-300"></div>
-        {/* Tečka */}
+        {/* Dot */}
         <div className="absolute -left-1.5 top-1.5 h-4 w-4 rounded-full bg-blue-700"></div>
-        {/* Obsah */}
+        {/* Content */}
         <div className="space-y-2">
             <h3 className="text-xl font-bold">{role}</h3>
             <p className="font-bold flex items-center text-neutral-700">{employer}</p>
