@@ -3,16 +3,12 @@
 @font-face {
   font-family: 'Playwrite BR';
   src: url('assets/fonts/PlaywriteBR/playwrite-br-v10-latin-100.woff2') format('woff2');
-  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 .heading {
   font-family: 'Playwrite BR', cursive;
-  /* font-optical-sizing: "auto";  */
-  font-weight: "300"; 
-  /* font-style: "normal" */
 }
 
 /* Smooth scrolling */
