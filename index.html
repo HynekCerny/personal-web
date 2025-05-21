@@ -2,8 +2,23 @@
 <html lang="en">
 
 <head>
+  <!-- Preconnect to improve DNS/TLS connection speed -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Preload the stylesheet to start fetching early -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Playwrite+BR:wght@100..400&display=swap">
+
+  <!-- Load the stylesheet asynchronously -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playwrite+BR:wght@100..400&display=swap"
+    media="print" onload="this.media='all'">
+
+  <!-- Fallback for browsers with JavaScript disabled -->
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playwrite+BR:wght@100..400&display=swap">
+  </noscript>
+
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
@@ -17,13 +32,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Playwrite+BR:wght@100..400&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Playwrite+BR:wght@100..400&display=swap" rel="stylesheet"
-    media="all" onload="this.media='all'">
-  <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+BR:wght@100..400&display=swap" rel="stylesheet">
-  </noscript>
   <title>Hynek Černý - IT/Business Analyst</title>
   <meta name="description"
     content="Experienced IT/Businees Analyts with a passion for bridging the gap between business needs and technical solutions." />
