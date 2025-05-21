@@ -21,7 +21,7 @@ const Hero = () => {
             <div className="container md:px-10 max-w-screen-xl mx-auto px-4 w-full">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
                     <div className="justify-self-center md:justify-self-start">
-                        <h2 className="pt-2 text-3xl font-bold sm:text-4xl text-gray-600" style={{ fontFamily: 'Playwrite BR, cursive', fontOpticalSizing: "auto", fontWeight: "300", fontStyle: "normal" }}>
+                        <h2 className="heading pt-2 text-3xl font-bold sm:text-4xl text-gray-600">
                             Hynek Černý
                         </h2>
                         <p className="pl-10 sm:pl-22 text-sm sm:text-base text-gray-500">
