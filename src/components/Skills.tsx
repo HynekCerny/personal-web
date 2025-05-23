@@ -25,7 +25,7 @@ const Skills = () => {
         {
             icon: Code2,
             title: "Technical Skills",
-            items: ["OpenAPI", "SQL", "SOAP", "REST", "HTML/CSS", "TypeScript + React", "GitHub", "Figma", "AxureRP"],
+            items: ["EA", "OpenAPI", "REST", "Kafka", "RabbitMQ", "SOAP", "SQL", "HTML/CSS", "TypeScript + React", "GitHub", "Figma", "AxureRP"],
         },
         {
             icon: BriefcaseBusiness,
