@@ -57,6 +57,8 @@ const About = () => {
                             alt="About Me"
                             className="w-40 sm:w-48 md:w-56 lg:w-64 aspect-square rounded-full object-cover"
                             src={profileImage}
+                            loading='lazy'
+                            decoding='async'
                         />
                     </div>
                 </div>
