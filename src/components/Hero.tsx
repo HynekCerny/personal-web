@@ -39,7 +39,7 @@ const Hero = () => {
                             className="cursor-pointer px-4 lg:px-8 py-3 text-base lg:text-xl bg-blue-700 text-white rounded-lg border-2 border-blue-700 hover:bg-blue-100 hover:text-blue-700 hover:border-blue-700 transition-colors flex items-center space-x-2 mt-4 md:mt-0 justify-center"
                         >
                             <FaLinkedin className="w-6 h-6" />
-                            <span>Get in Touch</span>
+                            <span>Get In Touch</span>
                         </button>
                     </div>
                 </div>
