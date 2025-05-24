@@ -9,6 +9,7 @@ const Header = () => {
 
   /* Smooth scrolling function */
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
+    setIsOpen(false); // Close mobile menu after clicking
     e.preventDefault();
     const id = targetId.replace("#", ""); // Remove # if present
 
@@ -20,8 +21,6 @@ const Header = () => {
         targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }
-
-    setIsOpen(false); // Close mobile menu after clicking
   };
 
   /* Detect scrolling to add shadow to navbar */
@@ -87,17 +86,17 @@ const Header = () => {
           className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden relative"
         >
           <span className="sr-only">Toggle main menu</span>
-          <Menu className={`w-6 h-6 absolute transition-all duration-500 ease-in-out ${isOpen ? 'opacity-0 scale-50 rotate-90' : 'opacity-100 scale-100 rotate-0'
+          <Menu className={`w-6 h-6 absolute transition-all duration-300 ease-in-out ${isOpen ? 'opacity-0 scale-50 rotate-90' : 'opacity-100 scale-100 rotate-0'
               }`}
           />
           <X
-            className={`w-6 h-6 absolute transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
+            className={`w-6 h-6 absolute transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
               }`}
           />
         </button>
 
         <div
-          className={`transition-all duration-500 ease-in-out overflow-hidden ${isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
             } md:opacity-100 md:max-h-none md:block md:w-auto w-full`}
         >
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-2xl md:flex-row md:space-x-8 md:mt-0 md:border-0 border-gray-500">
