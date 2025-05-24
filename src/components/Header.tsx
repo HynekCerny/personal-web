@@ -73,9 +73,8 @@ const Header = () => {
 
   return (
     <nav
-      className={`border-gray-200 fixed w-full top-0 left-0 z-20 backdrop-blur-lg bg-gradient-to-t from-white transition-all duration-500 ease-in-out ${
-        isScrolled ? "shadow-lg" : "shadow-none"
-      }`}
+      className={`border-gray-200 fixed w-full top-0 left-0 z-20 backdrop-blur-lg bg-gradient-to-t from-white transition-all duration-500 ease-in-out ${isScrolled || isOpen ? "shadow-lg" : "shadow-none"
+        }`}
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="#" onClick={(e) => handleSmoothScroll(e, "home")} className="flex items-center space-x-2">
@@ -85,13 +84,23 @@ const Header = () => {
         <button
           onClick={() => setIsOpen(!isOpen)}
           type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden relative"
         >
-          <span className="sr-only">Open main menu</span>
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          <span className="sr-only">Toggle main menu</span>
+          <Menu className={`w-6 h-6 absolute transition-all duration-500 ease-in-out ${isOpen ? 'opacity-0 scale-50 rotate-90' : 'opacity-100 scale-100 rotate-0'
+              }`}
+          />
+          <X
+            className={`w-6 h-6 absolute transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
+              }`}
+          />
         </button>
-        <div className={`${isOpen ? "block" : "hidden"} w-full md:block md:w-auto`}>
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
+
+        <div
+          className={`transition-all duration-500 ease-in-out overflow-hidden ${isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+            } md:opacity-100 md:max-h-none md:block md:w-auto w-full`}
+        >
+          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-2xl md:flex-row md:space-x-8 md:mt-0 md:border-0 border-gray-500">
             {[
               { id: "about", name: "About Me" },
               { id: "skills", name: "Skills & Expertise" },
@@ -102,11 +111,10 @@ const Header = () => {
                 <a
                   href={`#${id}`}
                   onClick={(e) => handleSmoothScroll(e, id)}
-                  className={`block py-2 px-3 rounded-sm md:p-0 ${
-                    activeSection === id
-                      ? "text-white bg-blue-700 md:bg-transparent md:text-blue-700"
-                      : "text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700"
-                  }`}
+                  className={`block py-2 px-3 rounded-sm md:p-0 ${activeSection === id
+                    ? "text-white bg-blue-700 md:bg-transparent md:text-blue-700"
+                    : "text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700"
+                    }`}
                 >
                   {name}
                 </a>

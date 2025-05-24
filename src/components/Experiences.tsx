@@ -25,7 +25,7 @@ export default function Experiences() {
                         // 'Analyzing and designing system integrations using REST and RabbitMQ',
                     ]}
                     />
-                    <Experience role='Chapter Lead - IT/Business analysis, B2C' employer='RENOMIA, a.s.' duration='08/2022 - 03/2025' location='Prague' description={[
+                    <Experience role='Chapter Lead - IT/Business Analysis, B2C' employer='RENOMIA, a.s.' duration='08/2022 - 03/2025' location='Prague' description={[
                         'Leading team of four analysts in a B2C segment',
                         'Collaborating with stakeholders to identify, gather, and document business requirements and technical specifications',
                         'Serving as the main point of contact between business users, IT teams, and external vendors to ensure clear communication and understanding',
