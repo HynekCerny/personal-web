@@ -45,7 +45,7 @@ const Skills = () => {
                             Skills & Expertise
                         </div>
                         <h2 className="pt-2 text-3xl font-bold tracking-tighter sm:text-5xl">My Toolkit</h2>
-                        <p className="max-w-[900px] text-xl/relaxed">
+                        <p className="max-w-[900px] text-lg/relaxed md:text-xl/relaxed">
                             I've developed a diverse set of skills that allow me to excel in both business and technical
                             environments.
                         </p>

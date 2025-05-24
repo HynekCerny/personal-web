@@ -14,7 +14,7 @@ const Contact = () => {
                             Contact
                         </div>
                         <h2 className="pt-2 text-3xl font-bold tracking-tighter sm:text-5xl">Get In Touch</h2>
-                        <p className="max-w-[900px] text-xl/relaxed">
+                        <p className="max-w-[900px] text-lg/relaxed md:text-xl/relaxed">
                             Interested in working together? I'd love to hear from you.
                         </p>
                     </div>
