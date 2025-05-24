@@ -9,8 +9,8 @@ const Header = () => {
 
   /* Smooth scrolling function */
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
-    setIsOpen(false); // Close mobile menu after clicking
     e.preventDefault();
+    setIsOpen(false); // Close mobile menu after clicking
     const id = targetId.replace("#", ""); // Remove # if present
 
     if (id === "home") {
@@ -48,6 +48,11 @@ const Header = () => {
 
       if (scrollPosition >= documentHeight - 10) {
         setActiveSection("contact");
+        return;
+      }
+
+      if (scrollPosition == window.innerHeight) {
+        setActiveSection("");
         return;
       }
 
