@@ -12,7 +12,7 @@ export default function Experiences() {
                             Work Experience
                         </div>
                         <h2 className="pt-2 text-3xl font-bold tracking-tighter sm:text-5xl">Professional Journey</h2>
-                        <p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                        <p className="max-w-[900px] text-xl/relaxed">
                             My career path has equipped me with a diverse set of experiences.
                         </p>
                     </div>

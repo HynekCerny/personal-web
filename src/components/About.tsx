@@ -12,7 +12,7 @@ const About = () => {
                             About Me
                         </div>
                         <h2 className="pt-2 text-3xl font-bold tracking-tighter sm:text-5xl">Who I Am</h2>
-                        <p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                        <p className="max-w-[900px] text-xl/relaxed">
                             I'm an experienced IT/Business Analyst with a passion for bridging the gap between business needs and
                             technical solutions. With over 7 years of experience, I specialize in delivering high-quality solutions that align with customer needs and expectations.
                         </p>
