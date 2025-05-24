@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-  <link rel="preload" href="src/assets/fonts/PlaywriteBR/playwrite-br-v10-latin-100.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="src/assets/fonts/PlaywriteBR/playwrite-br-v10-latin-100.woff2" as="font" type="font/woff2"
+    crossorigin="anonymous">
 
 
   <!-- Google Tag Manager -->
@@ -24,10 +25,26 @@
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Z8HWR2W" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+      style="display:none;visibility:hidden"></iframe>
+    <style>
+    #root { display: none; }
+    .no-js-message {
+      display: block;
+      padding: 1em;
+      font-family: sans-serif;
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+      margin: 1em;
+      border-radius: 4px;
+      text-align: center;
+    }
+    </style>
+    <div class="no-js-message">
+      This web requires JavaScript to run properly. Please enable JavaScript in your browser settings.
+    </div>
+  </noscript>
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
 </body>
