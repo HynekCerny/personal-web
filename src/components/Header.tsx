@@ -88,7 +88,7 @@ const Header = () => {
         <button
           onClick={() => setIsOpen(!isOpen)}
           type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden relative"
+          className="cursor-pointer inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden relative"
         >
           <span className="sr-only">Toggle main menu</span>
           <Menu className={`w-6 h-6 absolute transition-all duration-300 ease-in-out ${isOpen ? 'opacity-0 scale-50 rotate-90' : 'opacity-100 scale-100 rotate-0'
