@@ -7,16 +7,22 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
+  const sections = [
+    { id: "about", name: "About Me" },
+    { id: "skills", name: "Skills & Expertise" },
+    { id: "experiences", name: "Work Experience" },
+    { id: "contact", name: "Contact Me" },
+  ];
+
   /* Smooth scrolling function */
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
     e.preventDefault();
     setIsOpen(false); // Close mobile menu after clicking
-    const id = targetId.replace("#", ""); // Remove # if present
 
-    if (id === "home") {
+    if (targetId === "home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      const targetElement = document.getElementById(id);
+      const targetElement = document.getElementById(targetId);
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
       }
@@ -35,13 +41,6 @@ const Header = () => {
 
   /* Detect which section is active */
   useEffect(() => {
-    const sections = [
-      { id: "about", name: "About Me" },
-      { id: "skills", name: "Skills & Expertise" },
-      { id: "experiences", name: "Work Experience" },
-      { id: "contact", name: "Contact Me" },
-    ];
-
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
@@ -104,27 +103,23 @@ const Header = () => {
           className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
             } md:opacity-100 md:max-h-none md:block md:w-auto w-full`}
         >
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-2xl md:flex-row md:space-x-8 md:mt-0 md:border-0 border-gray-500">
-            {[
-              { id: "about", name: "About Me" },
-              { id: "skills", name: "Skills & Expertise" },
-              { id: "experiences", name: "Work Experience" },
-              { id: "contact", name: "Contact Me" },
-            ].map(({ id, name }) => (
-              <li key={id}>
-                <a
-                  href={`#${id}`}
-                  onClick={(e) => handleSmoothScroll(e, id)}
-                  className={`block py-2 px-3 rounded-sm md:p-0 ${activeSection === id
-                    ? "text-white bg-blue-700 md:bg-transparent md:text-blue-700"
-                    : "text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700"
-                    }`}
-                >
-                  {name}
-                </a>
-              </li>
-            ))}
-          </ul>
+            <ul className="font-medium flex flex-col p-4 md:p-2 mt-4 border rounded-2xl md:flex-row md:space-x-8 md:mt-0 md:border-0 border-gray-500">
+              {
+              sections.map(({ id, name }) => (
+                <li key={id}>
+                  <a
+                    href={`#${id}`}
+                    onClick={(e) => handleSmoothScroll(e, id)}
+                    className={`block py-2 px-3 rounded-sm md:p-0 ${activeSection === id
+                      ? "text-white bg-blue-700 md:bg-transparent md:text-blue-700"
+                      : "text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700"
+                      }`}
+                  >
+                    {name}
+                  </a>
+                </li>
+              ))}
+            </ul>
         </div>
       </div>
     </nav>
