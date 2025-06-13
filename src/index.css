@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 html {
-  @apply bg-white dark:bg-black;
+  @apply bg-white dark:bg-gray-950;
 }
 
 body {
