@@ -9,9 +9,9 @@ import Contact from './components/Contact'
 
 function App() {
   return (
-    <>
+    <div className="dark:text-gray-200 dark:bg-gray-900">
       <Header/>
-      <main className="">
+      <main>
         <Hero/>
         <About/>
         <Skills/>
@@ -19,7 +19,7 @@ function App() {
         <Contact/>
       </main>
       <Footer/>
-    </>
+    </div>
   )
 }
 

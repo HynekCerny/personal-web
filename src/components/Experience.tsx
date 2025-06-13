@@ -18,8 +18,8 @@ const Experience = ( {role, employer, duration, location, description} : Props) 
         {/* Content */}
         <div className="space-y-2">
             <h3 className="text-xl font-bold">{role}</h3>
-            <p className="font-bold flex items-center text-neutral-700">{employer}</p>
-            <p className="flex items-center text-neutral-600">
+            <p className="font-bold flex items-center text-neutral-700 dark:text-gray-400">{employer}</p>
+            <p className="flex items-center text-neutral-600 dark:text-gray-500">
                 <CalendarDays className='h-4 w-4 mr-1' />{duration}
                 <span className='mx-2'>|</span>
                 <MapPin className='h-4 w-4 mr-1' />{location}

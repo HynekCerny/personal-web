@@ -2,6 +2,23 @@
 <html lang="en">
 
 <head>
+  <script>
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+      <style>
+        html.dark {
+          background-color: rgb(17 24 39);
+          color-scheme: dark;
+        }
+        body {
+          background-color: transparent;
+        }
+      </style>
   <link rel="preload" href="src/assets/fonts/PlaywriteBR/playwrite-br-v10-latin-100.woff2" as="font" type="font/woff2"
     crossorigin="anonymous">
 

@@ -76,7 +76,7 @@ const Header = () => {
 
   return (
     <nav
-      className={`border-gray-200 fixed w-full top-0 left-0 z-20 backdrop-blur-lg bg-gradient-to-t from-white transition-all duration-500 ease-in-out ${isScrolled || isOpen ? "shadow-lg" : "shadow-none"
+      className={`dark:text-gray-200 border-gray-200 fixed w-full top-0 left-0 z-20 backdrop-blur-lg bg-gradient-to-t dark:from-gray-950 from-white transition-all duration-500 ease-in-out ${isScrolled || isOpen ? "shadow-lg" : "shadow-none"
         }`}
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -112,7 +112,7 @@ const Header = () => {
                     onClick={(e) => handleSmoothScroll(e, id)}
                     className={`block py-2 px-3 rounded-sm md:p-0 ${activeSection === id
                       ? "text-white bg-blue-700 md:bg-transparent md:text-blue-700"
-                      : "text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700"
+                      : "text-gray-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:md:hover:bg-transparent md:hover:bg-transparent md:hover:text-blue-700"
                       }`}
                   >
                     {name}

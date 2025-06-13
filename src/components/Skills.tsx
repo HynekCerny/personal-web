@@ -35,7 +35,7 @@ const Skills = () => {
     ];
 
     return (
-        <section id="skills" className="fade-slide-in w-full justify-center pt-24 md:pt-24 lg:pt-24 bg-gradient-to-tr from-blue-100 to-white">
+        <section id="skills" className="fade-slide-in w-full justify-center pt-24 md:pt-24 lg:pt-24 bg-gradient-to-tr from-blue-100 to-white dark:from-gray-700 dark:to-gray-900">
             
             <div className="container md:px-10 max-w-screen-xl mx-auto px-4">
                 <div className="flex flex-col items-center space-y-4 text-center">
@@ -53,16 +53,16 @@ const Skills = () => {
                 </div>
                 <div className="mx-auto grid max-w-5xl gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
                     {skills.map(({ icon: Icon, title, items }, index) => (
-                        <div key={index} className="rounded-2xl border border-gray-500 bg-white p-6 shadow-sm hover:bg-blue-50 hover:shadow-lg transition-shadow">
+                        <div key={index} className="rounded-2xl border border-gray-500 bg-white dark:bg-gray-900 p-6 shadow-sm hover:bg-blue-50 dark:hover:bg-gray-800 hover:shadow-lg transition-shadow">
                             <div className="flex items-center text-lg font-semibold mb-4">
-                                <Icon className="mr-2 h-5 w-5 text-gray-700" />
+                                <Icon className="mr-2 h-5 w-5 text-gray-700 dark:text-gray-400" />
                                 {title}
                             </div>
                             <div className="flex flex-wrap gap-2">
                                 {items.map((item, idx) => (
                                     <span
                                         key={idx}
-                                        className="rounded-full bg-gray-200 px-3 py-1 text-sm font-medium text-gray-700"
+                                        className="rounded-full bg-gray-200 dark:bg-gray-400 px-3 py-1 text-sm font-medium text-gray-700"
                                     >
                                         {item}
                                     </span>
