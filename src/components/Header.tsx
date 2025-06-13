@@ -76,7 +76,7 @@ const Header = () => {
 
   return (
     <nav
-      className={`dark:text-gray-200 border-gray-200 fixed w-full top-0 left-0 z-20 backdrop-blur-lg bg-gradient-to-t dark:from-gray-950 from-white transition-all duration-500 ease-in-out ${isScrolled || isOpen ? "shadow-lg" : "shadow-none"
+      className={`dark:text-gray-200 border-gray-200 fixed w-full top-0 left-0 z-20 backdrop-blur-lg bg-gradient-to-t dark:from-gray-950 from-white transition-all duration-500 ease-in-out ${isScrolled || isOpen ? "shadow-lg dark:shadow-lg" : "shadow-none dark:shadow-none"
         }`}
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
