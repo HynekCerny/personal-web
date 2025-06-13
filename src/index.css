@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+html {
+  @apply bg-white dark:bg-black;
+}
+
+body {
+  @apply bg-transparent;
+}
+
 @font-face {
   font-family: 'Playwrite BR';
   src: url('assets/fonts/PlaywriteBR/playwrite-br-v10-latin-100.woff2') format('woff2');
