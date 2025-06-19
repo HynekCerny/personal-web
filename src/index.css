@@ -10,7 +10,7 @@ body {
 
 @font-face {
   font-family: 'Playwrite BR';
-  src: url('assets/fonts/PlaywriteBR/playwrite-br-v10-latin-100.woff2') format('woff2');
+  src: url('assets/fonts/PlaywriteBR/playwrite-br-1.woff2') format('woff2');
   font-style: normal;
   font-display: swap;
 }

@@ -82,7 +82,7 @@ const Header = () => {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="#" onClick={(e) => handleSmoothScroll(e, "home")} className="flex items-center space-x-2">
           <User className="w-6 h-6 font-bold stroke-[2.5]" />
-          <span className="text-2xl font-semibold">Hynek Černý</span>
+          <span className="text-2xl font-medium">Hynek Černý</span>
         </a>
         <button
           onClick={() => setIsOpen(!isOpen)}
