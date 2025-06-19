@@ -1,5 +1,5 @@
 import { FaLinkedin } from "react-icons/fa6";
-import { FaQuoteRight, FaQuoteLeft } from "react-icons/fa6";
+// import { FaQuoteRight, FaQuoteLeft } from "react-icons/fa6";
 // import { QuoteIcon, Quote, MessageSquareQuote } from "lucide-react";
 
 declare global {
