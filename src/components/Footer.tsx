@@ -2,7 +2,7 @@ import { FaLinkedin, FaGithub } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="fade-slide-in bottom-0 left-0 z-20 w-full p-4 border-t-2 bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-950 dark:text-gray-400 md:p-6">
+    <footer className="fade-slide-in bottom-0 left-0 z-20 w-full p-4 border-t-2 bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 dark:text-gray-400 md:p-6">
       <div className="w-full mx-auto max-w-screen-xl flex flex-col md:flex-row md:items-center md:justify-between">
         {/* Copyright (Left) */}
         <span className="text-md text-center">
