@@ -1,4 +1,4 @@
-import profileImage from '../assets/profile_square.webp';
+import profileImage from '../../public/assets/profile_square.webp';
 import { User2 } from "lucide-react";
 
 const About = () => {
