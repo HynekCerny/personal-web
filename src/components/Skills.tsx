@@ -53,7 +53,7 @@ const Skills = () => {
                 </div>
                 <div className="mx-auto grid max-w-5xl gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
                     {skills.map(({ icon: Icon, title, items }, index) => (
-                        <div key={index} className="rounded-2xl border border-gray-500 bg-white dark:bg-gray-900 p-6 shadow-sm hover:bg-blue-50 dark:hover:bg-gray-800 hover:shadow-lg transition-shadow">
+                        <div key={index} className="rounded-2xl border border-gray-500 bg-white dark:bg-gray-900 p-6 shadow-sm dark:shadow-sm dark:shadow-gray-800 dark:border-gray-500 hover:bg-blue-50 dark:hover:bg-gray-800 hover:shadow-lg transition-shadow">
                             <div className="flex items-center text-lg font-semibold mb-4">
                                 <Icon className="mr-2 h-5 w-5 text-gray-700 dark:text-gray-400" />
                                 {title}
@@ -62,7 +62,7 @@ const Skills = () => {
                                 {items.map((item, idx) => (
                                     <span
                                         key={idx}
-                                        className="rounded-full bg-gray-200 dark:bg-gray-400 px-3 py-1 text-sm font-medium text-gray-700"
+                                        className="rounded-full bg-gray-200 dark:bg-gray-400 px-3 py-1 text-sm font-medium text-gray-700 dark:text-gray-900"
                                     >
                                         {item}
                                     </span>

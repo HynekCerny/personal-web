@@ -20,7 +20,7 @@ const Contact = () => {
                     </div>
                 </div>
                 <div className="mx-auto grid max-w-xl gap-8 py-12 md:grid-cols-1">
-                    <div className="border rounded-lg shadow-md p-6 bg-white dark:bg-gray-900">
+                    <div className="border rounded-lg shadow-md p-6 bg-white dark:bg-gray-900 dark:border-gray-500">
                         <div className="border-b pb-4 mb-4">
                             <h2 className="text-xl font-semibold">Contact Information</h2>
                             <p className="text-gray-600 dark:text-gray-400 transition-colors font-medium">

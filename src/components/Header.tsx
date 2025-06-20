@@ -112,7 +112,7 @@ const Header = () => {
                     onClick={(e) => handleSmoothScroll(e, id)}
                     className={`block py-2 px-3 rounded-sm md:p-0 ${activeSection === id
                       ? "text-white bg-blue-700 md:bg-transparent md:text-blue-700"
-                      : "text-gray-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:md:hover:bg-transparent md:hover:bg-transparent md:hover:text-blue-700"
+                      : "text-gray-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:border-gray-500 dark:md:hover:bg-transparent md:hover:bg-transparent md:hover:text-blue-700"
                       }`}
                   >
                     {name}
