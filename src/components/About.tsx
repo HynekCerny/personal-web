@@ -1,5 +1,5 @@
-// import profileImage from '../../public/assets/profile_square.webp';
-const profileImageUrl = '/assets/profile_square.webp';
+import profileImage from '../../public/assets/profile_square.webp';
+// const profileImageUrl = '/assets/profile_square.webp';
 import { User2 } from "lucide-react";
 
 const About = () => {
@@ -57,7 +57,7 @@ const About = () => {
                         <img
                             alt="About Me"
                             className="w-40 sm:w-48 md:w-56 lg:w-64 aspect-square rounded-full object-cover"
-                            src={profileImageUrl}
+                            src={profileImage}
                         />
                     </div>
                 </div>
