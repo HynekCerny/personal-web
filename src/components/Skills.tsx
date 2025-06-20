@@ -40,7 +40,7 @@ const Skills = () => {
             <div className="container md:px-10 max-w-screen-xl mx-auto px-4">
                 <div className="flex flex-col items-center space-y-4 text-center">
                     <div className="space-y-2">
-                        <div className="inline-flex items-center rounded-full border px-3.5 py-1 font-semibold">
+                        <div className="inline-flex items-center rounded-full border px-3.5 py-1 font-semibold dark:border-gray-200">
                             <Code2 className="mr-2 h-4 w-4" />
                             Skills & Expertise
                         </div>
