@@ -1,18 +1,19 @@
 import type React from "react";
 import { User, Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
-  const sections = [
-    { id: "about", name: "About Me" },
+
+  const sections = useMemo(() => [
+  { id: "about", name: "About Me" },
     { id: "skills", name: "Skills & Expertise" },
     { id: "experiences", name: "Work Experience" },
     { id: "contact", name: "Contact Me" },
-  ];
+], []);
 
   /* Smooth scrolling function */
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
@@ -72,7 +73,7 @@ const Header = () => {
     handleScroll(); // Run once on load
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [sections]);
 
   return (
     <nav
