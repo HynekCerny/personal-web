@@ -9,11 +9,11 @@ const Header = () => {
 
 
   const sections = useMemo(() => [
-  { id: "about", name: "About Me" },
+    { id: "about", name: "About Me" },
     { id: "skills", name: "Skills & Expertise" },
     { id: "experiences", name: "Work Experience" },
     { id: "contact", name: "Contact Me" },
-], []);
+  ], []);
 
   /* Smooth scrolling function */
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
@@ -29,6 +29,13 @@ const Header = () => {
       }
     }
   };
+
+  useEffect(() => {
+    // Disable scroll restoration to prevent jumping when navigating back
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+  }, []);
 
   /* Detect scrolling to add shadow to navbar */
   useEffect(() => {
@@ -92,7 +99,7 @@ const Header = () => {
         >
           <span className="sr-only">Toggle main menu</span>
           <Menu className={`w-6 h-6 absolute transition-all duration-300 ease-in-out ${isOpen ? 'opacity-0 scale-0 rotate-90' : 'opacity-100 scale-100 rotate-0'
-              }`}
+            }`}
           />
           <X
             className={`w-6 h-6 absolute transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 scale-100 rotate-90' : 'opacity-0 scale-0 rotate-0'
@@ -104,8 +111,8 @@ const Header = () => {
           className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
             } md:opacity-100 md:max-h-none md:block md:w-auto w-full`}
         >
-            <ul className="font-medium flex flex-col p-4 md:p-2 mt-4 border rounded-2xl md:flex-row md:space-x-8 md:mt-0 md:border-0 border-gray-500">
-              {
+          <ul className="font-medium flex flex-col p-4 md:p-2 mt-4 border rounded-2xl md:flex-row md:space-x-8 md:mt-0 md:border-0 border-gray-500">
+            {
               sections.map(({ id, name }) => (
                 <li key={id}>
                   <a
@@ -120,7 +127,7 @@ const Header = () => {
                   </a>
                 </li>
               ))}
-            </ul>
+          </ul>
         </div>
       </div>
     </nav>
