@@ -6,7 +6,7 @@ import Skills from './components/Skills'
 import About from './components/About'
 import Hero from './components/Hero'
 import Contact from './components/Contact'
-import { useEffect } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
 
 function loadGTM(gtmId: string) {
   if (window.dataLayer) return; // Prevent multiple GTM injections
@@ -22,6 +22,32 @@ function App() {
   useEffect(() => {
     // Call this after consent or immediately as needed
     loadGTM('GTM-5Z8HWR2W');
+  }, []);
+
+  // const location = useLocation();
+
+  useLayoutEffect(() => {
+    const scrollPosition = sessionStorage.getItem('scrollPosition');
+    if (scrollPosition) {
+      // Temporarily disable smooth scrolling to make the jump instant
+      document.documentElement.style.scrollBehavior = 'auto';
+      window.scrollTo(0, parseInt(scrollPosition, 10));
+      sessionStorage.removeItem('scrollPosition');
+      // Restore the original scroll behavior from the stylesheet
+      document.documentElement.style.scrollBehavior = '';
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      sessionStorage.setItem('scrollPosition', window.scrollY.toString());
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
   }, []);
 
   return (
