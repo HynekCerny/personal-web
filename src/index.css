@@ -1,13 +1,16 @@
 @import "tailwindcss";
 
-html {
+/* CSS */
+:root {
   @apply bg-white dark:bg-gray-950;
-}
-
-body {
-  @apply bg-transparent;
+  /* font-family: Inter, sans-serif; */
+  /* font-feature-settings: 'liga' 1, 'calt' 1; fix for Chrome */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
+
+/* @supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
+} */
 
 @font-face {
   font-family: 'Playwrite BR';
