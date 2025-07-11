@@ -8,7 +8,11 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  
+
+  compiler: {
+    legacyBrowsers: false,
+  }
+
   // Můžete zde mít i další nastavení, např.
   // reactStrictMode: true,
 };
