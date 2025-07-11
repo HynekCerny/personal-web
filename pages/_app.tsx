@@ -44,13 +44,14 @@ function MyApp({ Component, pageProps }: AppProps) {
     return (
         <>
             <Head>
+                <meta charSet="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>Hynek Černý - IT/Business Analyst</title>
                 <meta name="description"
                     content="Experienced IT/Businees Analyts with a passion for bridging the gap between business needs and technical solutions." />
-                <link rel="preload" href="src/assets/fonts/PlaywriteBR/playwrite-br-1.woff2" as="font" type="font/woff2"
+                <link rel="preload" href="assets/fonts/PlaywriteBR/playwrite-br-1.woff2" as="font" type="font/woff2"
                     crossOrigin="anonymous" />
-                <link rel="preload" as="image" href="public/assets/profile_square.webp"></link>
+                <link rel="preload" as="image" href="assets/profile_square.webp"></link>
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
             </Head>
 

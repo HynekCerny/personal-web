@@ -1,6 +1,6 @@
-// eslint.config.js
-const nextConfig = require('eslint-config-next');
 
-module.exports = [
+import nextConfig from 'eslint-config-next';
+
+export default [
   nextConfig,
 ];
