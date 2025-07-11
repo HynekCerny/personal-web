@@ -1,4 +1,6 @@
-import profileImage from '../../public/assets/profile_square.webp';
+// import profileImage from '../../public/assets/profile_square.webp';
+import Image from 'next/image';
+
 // const profileImageUrl = '/assets/profile_square.webp';
 import { User2 } from "lucide-react";
 
@@ -54,11 +56,18 @@ const About = () => {
                         </ul>
                     </div>
                     <div className="flex justify-center lg:justify-end w-full">
-                        <img
+                        <Image
+                            src="/assets/profile_square.webp"
+                            alt="About Me"
+                            width={500}  // Nahraďte skutečnou šířkou obrázku
+                            height={500} // Nahraďte skutečnou výškou obrázku
+                            className="w-40 sm:w-48 md:w-56 lg:w-64 aspect-square rounded-full object-cover"
+                        />
+                        {/* <img
                             alt="About Me"
                             className="w-40 sm:w-48 md:w-56 lg:w-64 aspect-square rounded-full object-cover"
                             src={profileImage}
-                        />
+                        /> */}
                     </div>
                 </div>
 

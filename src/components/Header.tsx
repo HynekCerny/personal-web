@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import type React from "react";
 import { User, Menu, X } from "lucide-react";
 import { useEffect, useState, useMemo } from "react";
@@ -89,10 +90,10 @@ const Header = () => {
         }`}
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="#" onClick={(e) => handleSmoothScroll(e, "home")} className="flex items-center space-x-2">
+        <Link href="#" onClick={(e) => handleSmoothScroll(e, "home")} className="flex items-center space-x-2">
           <User className="w-6 h-6 font-bold stroke-[2.5]" />
           <span className="text-2xl font-medium">Hynek Černý</span>
-        </a>
+        </Link>
         <button
           onClick={() => setIsOpen(!isOpen)}
           type="button"
