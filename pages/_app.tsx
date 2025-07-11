@@ -51,7 +51,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                     content="Experienced IT/Businees Analyts with a passion for bridging the gap between business needs and technical solutions." />
                 <link rel="preload" href="assets/fonts/PlaywriteBR/playwrite-br-1.woff2" as="font" type="font/woff2"
                     crossOrigin="anonymous" />
-                <link rel="preload" as="image" href="assets/profile_square.webp"></link>
+                {/* <link rel="preload" as="image" href="assets/profile_square.webp"></link> */}
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
             </Head>
 
