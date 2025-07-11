@@ -9,9 +9,11 @@ const nextConfig = {
     unoptimized: true,
   },
 
-  compiler: {
-    legacyBrowsers: false,
-  }
+  browsersList: [
+    '> 0.5%',
+    'not dead',
+    'not op_mini all'
+  ],
 
   // Můžete zde mít i další nastavení, např.
   // reactStrictMode: true,
