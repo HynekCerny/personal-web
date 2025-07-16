@@ -3,8 +3,8 @@ import Experience from './Experience';
 
 export default function Experiences() {
     return (
-        <section id="experiences" className="fade-slide-in w-full justify-center py-24 bg-muted">
-            <div className="container md:px-10 max-w-screen-xl mx-auto px-4">
+        <section id="experiences" className="fade-in w-full justify-center py-24 bg-muted">
+            <div className="fade-slide-in container md:px-10 max-w-screen-xl mx-auto px-4">
                 <div className="flex flex-col items-center space-y-4 text-center">
                     <div className="space-y-2">
                         <div className="inline-flex items-center rounded-full border px-3.5 py-1 font-semibold dark:border-gray-200">

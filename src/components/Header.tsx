@@ -2,11 +2,14 @@ import Link from 'next/link';
 import type React from "react";
 import { User, Menu, X } from "lucide-react";
 import { useEffect, useState, useMemo } from "react";
+import { useRouter } from 'next/router';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const router = useRouter();
+  const isHomePage = router.pathname === '/';
 
 
   const sections = useMemo(() => [
@@ -31,6 +34,13 @@ const Header = () => {
     }
   };
 
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
+    e.preventDefault();
+    sessionStorage.setItem('scrollToSection', targetId);
+    router.push('/');
+    setIsOpen(false);
+  };
+
   useEffect(() => {
     // Disable scroll restoration to prevent jumping when navigating back
     if ("scrollRestoration" in window.history) {
@@ -51,6 +61,8 @@ const Header = () => {
 
   /* Detect which section is active */
   useEffect(() => {
+    if (!isHomePage) return;
+
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
@@ -82,15 +94,15 @@ const Header = () => {
     handleScroll(); // Run once on load
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [sections]);
+  }, [sections, isHomePage]);
 
   return (
     <nav
-      className={`dark:text-gray-200 border-gray-200 fixed w-full top-0 left-0 z-20 backdrop-blur-lg bg-gradient-to-t dark:from-gray-950 from-white transition-all duration-500 ease-in-out ${isScrolled || isOpen ? "shadow-lg dark:shadow-lg dark:shadow-gray-900" : "shadow-none dark:shadow-none"
+      className={`dark:text-gray-200 border-gray-200 fixed w-full top-0 left-0 z-20 backdrop-blur-lg bg-gradient-to-t ${!isScrolled && !isOpen ? "bg-white dark:bg-gray-950/50" : "dark:from-gray-950 from-white"} transition-all duration-500 ease-in-out ${isScrolled || isOpen ? "shadow-lg dark:shadow-lg dark:shadow-gray-900" : "shadow-none dark:shadow-none"
         }`}
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link href="#" onClick={(e) => handleSmoothScroll(e, "home")} className="flex items-center space-x-2">
+        <Link href={isHomePage ? "#" : "/"} onClick={isHomePage ? (e) => handleSmoothScroll(e, "home") : undefined} className="flex items-center space-x-2">
           <User className="w-6 h-6 font-bold stroke-[2.5]" />
           <span className="text-2xl font-medium">Hynek Černý</span>
         </Link>
@@ -117,16 +129,26 @@ const Header = () => {
             {
               sections.map(({ id, name }) => (
                 <li key={id}>
-                  <a
-                    href={`#${id}`}
-                    onClick={(e) => handleSmoothScroll(e, id)}
-                    className={`block py-2 px-3 rounded-sm md:p-0 ${activeSection === id
-                      ? "text-white bg-blue-700 md:bg-transparent md:text-blue-700"
-                      : "text-gray-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:border-gray-500 dark:md:hover:bg-transparent md:hover:bg-transparent md:hover:text-blue-700"
-                      }`}
-                  >
-                    {name}
-                  </a>
+                  {isHomePage ? (
+                    <a
+                      href={`#${id}`}
+                      onClick={(e) => handleSmoothScroll(e, id)}
+                      className={`block py-2 px-3 rounded-sm md:p-0 ${activeSection === id
+                        ? "text-white bg-blue-700 md:bg-transparent md:text-blue-700"
+                        : "text-gray-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:border-gray-500 dark:md:hover:bg-transparent md:hover:bg-transparent md:hover:text-blue-700"
+                        }`}
+                    >
+                      {name}
+                    </a>
+                  ) : (
+                    <a
+                      href={`/${id}`}
+                      onClick={(e) => handleNavigation(e, id)}
+                      className={`block py-2 px-3 rounded-sm md:p-0 text-gray-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:border-gray-500 dark:md:hover:bg-transparent md:hover:bg-transparent md:hover:text-blue-700`}
+                    >
+                      {name}
+                    </a>
+                  )}
                 </li>
               ))}
           </ul>

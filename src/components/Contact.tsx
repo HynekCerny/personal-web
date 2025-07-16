@@ -4,9 +4,9 @@ import { FaLinkedin } from "react-icons/fa6";
 const Contact = () => {
     return (
 
-        <section id="contact" className="fade-slide-in w-full justify-center pb-24 pt-24 md:pt-24 lg:pt-24 bg-gradient-to-tr from-blue-100 to-white dark:from-gray-700 dark:to-gray-900">
+        <section id="contact" className="fade-in w-full justify-center pb-24 pt-24 md:pt-24 lg:pt-24 bg-gradient-to-tr from-blue-100 to-white dark:from-gray-700 dark:to-gray-900">
 
-            <div className="container md:px-10 max-w-screen-xl mx-auto px-4">
+            <div className="fade-slide-in container md:px-10 max-w-screen-xl mx-auto px-4">
                 <div className="flex flex-col items-center space-y-4 text-center">
                     <div className="space-y-2">
                         <div className="inline-flex items-center rounded-full border px-3.5 py-1 font-semibold dark:border-gray-200">
