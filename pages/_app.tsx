@@ -53,7 +53,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                     crossOrigin="anonymous" />
                 {/* <link rel="preload" as="image" href="assets/profile_square.webp"></link> */}
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-                <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"/>
+                <meta name="theme-color" content="#dbeafe" media="(prefers-color-scheme: light)"/>
                 <meta name="theme-color" content="#1e2939" media="(prefers-color-scheme: dark)"/>
             </Head>
 
