@@ -34,7 +34,7 @@ const Hero = () => {
                         {/* <FaQuoteRight className="inline-block absolute w-18 h-18 -mt-4 -ml-12 -z-30 text-blue-100 dark:text-gray-700"/> */}
                         {/* </h2> */}
                         
-                        <h2 className="heading pt-2 text-3xl sm:text-4xl text-gray-600 dark:text-gray-300">
+                        <h2 className="heading pt-2 text-3xl sm:text-4xl text-gray-600 dark:text-gray-300 ">
                             Hynek Černý
                         </h2>
                         <p className="pl-10 sm:pl-23 text-sm sm:text-base text-gray-500 dark:text-gray-400">

@@ -11,7 +11,7 @@ export default function Experiences() {
                             <BriefcaseBusiness className="mr-2 h-4 w-4" />
                             Work Experience
                         </div>
-                        <h2 className="pt-2 text-3xl font-bold tracking-tighter sm:text-5xl">Professional Journey</h2>
+                        <h2 className="pt-2 pb-2 text-3xl font-bold tracking-tighter sm:text-5xl text-transparent bg-clip-text bg-gradient-to-tr from-black to-gray-500 dark:from-gray-100 dark:to-gray-500">Professional Journey</h2>
                         <p className="max-w-[900px] text-lg/relaxed md:text-xl/relaxed">
                             My career path has equipped me with a diverse set of experiences.
                         </p>

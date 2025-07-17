@@ -13,7 +13,7 @@ const Contact = () => {
                             <Mail className="mr-2 h-4 w-4" />
                             Contact
                         </div>
-                        <h2 className="pt-2 text-3xl font-bold tracking-tighter sm:text-5xl">Get In Touch</h2>
+                        <h2 className="pt-2 pb-2 text-3xl font-bold tracking-tighter sm:text-5xl text-transparent bg-clip-text bg-gradient-to-tr from-black to-gray-500 dark:from-gray-100 dark:to-gray-500">Get In Touch</h2>
                         <p className="max-w-[900px] text-lg/relaxed md:text-xl/relaxed">
                             Interested in working together? I'd love to hear from you.
                         </p>

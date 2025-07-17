@@ -16,14 +16,14 @@ const Custom404: NextPage = () => {
                             <FileX2 className="mr-2 h-4 w-4" />
                             Error 404
                         </div>
-              <h2 className="pt-2 text-3xl font-bold tracking-tighter sm:text-5xl">Page Not Found</h2>
+              <h2 className="pt-2 pb-2 text-3xl font-bold tracking-tighter sm:text-5xl text-transparent bg-clip-text bg-gradient-to-tr from-black to-gray-500 dark:from-gray-100 dark:to-gray-500">Page Not Found</h2>
               <p className="max-w-[900px] text-lg/relaxed md:text-xl/relaxed pb-0 md:pb-8">
                             Page that you are looking for does not exist or has been moved.
-                        </p>
+                        </p>  
               <Link href="/"
                 className="font-medium hover:shadow-none shadow-lg cursor-pointer px-4 lg:px-8 py-3 text-base lg:text-xl bg-white dark:bg-gray-800 text-blue-700 dark:text-gray-300 border-2 border-blue-700 dark:border-gray-400 rounded-lg dark:hover:text-blue-700 dark:hover:border-blue-700 hover:bg-blue-100 dark:hover:bg-gray-800 transition-colors flex items-center space-x-2 mt-4 md:mt-0 justify-center"
               >
-                Back to main page
+                Back to Main Page
               </Link>
             </div>
           </div>
