@@ -19,8 +19,8 @@ const Hero = () => {
     };
 
     return (
-        <section className="fade-in w-full flex flex-col items-center sm:items-start text-center sm:text-left mt-14 pt-24 md:pt-24 lg:pt-24 pb-20 bg-gradient-to-tr from-blue-100 to-white dark:from-gray-700 dark:to-gray-900">
-            <div className="container md:px-10 max-w-screen-xl mx-auto px-4">
+        <section className="relative fade-in w-full flex flex-col items-center sm:items-start text-center sm:text-left mt-14 pt-24 md:pt-24 lg:pt-24 bg-gradient-to-tr from-blue-100 to-white dark:from-gray-700 dark:to-gray-900">
+            <div className="container md:px-10 max-w-screen-xl mx-auto px-4 pb-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 
                  
                 gap-6 items-center">
@@ -61,6 +61,9 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
+            {/* <div className="absolute bottom-0 left-0 w-full h-px">
+                <div className="glowing-line-full"></div>
+            </div> */}
         </section>
     );
 }
