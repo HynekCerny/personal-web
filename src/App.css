@@ -62,14 +62,14 @@
     position: absolute;
     top: -1px;
     left: 0;
-    height: 2px;
+    height: 1px;
     background: linear-gradient(90deg, transparent, #1d4ed8, transparent);
     animation: glowing-line-animation 3s ease-in-out infinite;
     animation-delay: 1s; /* Start after the fade-in animations */
     z-index: 10;
 }
 
-.glowing-line-full {
+/* .glowing-line-full {
     position: absolute;
     top: 0;
     left: 0;
@@ -77,7 +77,7 @@
     background: linear-gradient(90deg, transparent, #1d4ed8, transparent);
     animation: glowing-line-animation 4s ease-in-out infinite;
     animation-delay: 1.5s;
-}
+} */
 
 /* Add a little extra for dark mode if needed */
 .dark .glowing-line,
