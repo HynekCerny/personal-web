@@ -79,7 +79,7 @@
     position: absolute;
     top: -1px;
     left: 0;
-    height: 2px;
+    height: 1px;
     background: linear-gradient(90deg, transparent, #60a5fa, transparent);
     animation: glowing-line-animation-light 3s ease-in-out infinite;
     animation-delay: 1s; /* Start after the fade-in animations */
