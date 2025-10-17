@@ -10,7 +10,7 @@
     }
   
     100% {
-        left: 60%;
+        left: calc(100% - 250px); /* Move to the right edge minus the width of the glow */
         opacity: 0;
     }
 }
