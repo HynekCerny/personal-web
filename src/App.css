@@ -1,5 +1,6 @@
 @keyframes glowing-line-travel {
-    0% {
+    0%, 15% {
+        left: 0px;
         opacity: 0;
     }
     25% {
@@ -9,7 +10,7 @@
         opacity: 1;
     }
   
-    100% {
+    85%, 100% {
         left: calc(100% - 250px); /* Move to the right edge minus the width of the glow */
         opacity: 0;
     }
@@ -29,12 +30,10 @@
     content: '';
     position: absolute;
     top: 0;
-    left: 0px; /*Initial position */
     width: 250px;
     height: 100%;
     background: radial-gradient(ellipse at center, rgba(96, 165, 250, 0.7) 0%, rgba(96, 165, 250, 0) 70%);
-    animation: glowing-line-travel 3s linear infinite;
-    animation-delay: 0s;
+    animation: glowing-line-travel 5s linear infinite;
 }
 
 .dark .glowing-line::before {
