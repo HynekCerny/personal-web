@@ -1,5 +1,19 @@
-import nextPlugin from 'eslint-config-next';
+import js from '@eslint/js';
+import nextPlugin from '@next/eslint-plugin-next';
+import reactHooksPlugin from 'eslint-plugin-react-hooks';
 
 export default [
-  nextPlugin,
-]
+  { ignores: ['.next/**', 'out/**', 'node_modules/**'] },
+  js.configs.recommended,
+  {
+    plugins: {
+      '@next/next': nextPlugin,
+      'react-hooks': reactHooksPlugin,
+    },
+    rules: {
+      ...nextPlugin.configs.recommended.rules,
+      ...nextPlugin.configs['core-web-vitals'].rules,
+      ...reactHooksPlugin.configs.recommended.rules,
+    },
+  },
+];
