@@ -1,12 +1,6 @@
-import { FaLinkedin } from "react-icons/fa6";
+import { Linkedin } from "lucide-react";
 // import { FaQuoteRight, FaQuoteLeft } from "react-icons/fa6";
 // import { QuoteIcon, Quote, MessageSquareQuote } from "lucide-react";
-
-declare global {
-    interface Window {
-      dataLayer: Record<string, unknown>[];
-    }
-  }  
 
 const Hero = () => {
     const handleClick = () => {
@@ -55,7 +49,7 @@ const Hero = () => {
                             className="font-medium hover:shadow-none shadow-lg cursor-pointer px-4 lg:px-8 py-3 text-base lg:text-xl bg-blue-700  text-white rounded-lg border-2 border-blue-700  hover:bg-blue-100 dark:hover:bg-gray-800 hover:text-blue-700 dark:hover:text-blue-700 hover:border-blue-700 dark:hover:border-blue-700 transition-colors flex items-center space-x-2 mt-4 md:mt-0 justify-center"
                             // className="font-medium hover:shadow-none shadow-lg cursor-pointer px-6 py-3 text-base lg:text-xl bg-blue-700 text-white rounded-lg border-2 border-blue-700 hover:bg-blue-800 transition-colors mt-8 md:mt-0 flex items-center space-x-2"
                         >
-                            <FaLinkedin className="w-6 h-6" />
+                            <Linkedin className="w-6 h-6" />
                             <span>Get In Touch</span>
                         </button>
                     </div>
