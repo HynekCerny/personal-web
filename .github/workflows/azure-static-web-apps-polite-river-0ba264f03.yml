@@ -10,6 +10,23 @@ on:
       - main
 
 jobs:
+  lint_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Lint Job
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: 'npm'
+      - name: Install Dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
