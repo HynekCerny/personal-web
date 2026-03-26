@@ -1,4 +1,4 @@
-import { Linkedin, Github } from "lucide-react";
+import { FaLinkedin, FaGithub } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -15,10 +15,10 @@ const Footer = () => {
         {/* Social Icons (Right) */}
         <div className="flex space-x-4 mt-4 md:mt-0 justify-center">
           <a href="https://linkedin.com/in/hynekcerny" aria-label="Link to LinkedIn profile" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-700">
-            <Linkedin className="w-6 h-6" />
+            <FaLinkedin className="w-6 h-6" />
           </a>
           <a href="https://github.com/HynekCerny" aria-label="Link to GitHub profile" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-700">
-            <Github className="w-6 h-6" />
+            <FaGithub className="w-6 h-6" />
           </a>
         </div>
       </div>

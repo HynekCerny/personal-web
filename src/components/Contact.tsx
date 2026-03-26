@@ -1,4 +1,5 @@
-import { Mail, Linkedin } from "lucide-react";
+import { Mail } from "lucide-react";
+import { FaLinkedin } from "react-icons/fa6";
 
 const Contact = () => {
     return (
@@ -42,7 +43,7 @@ const Contact = () => {
                                     </a>
                                 </div>
                                 <div className="flex items-center">
-                                    <Linkedin className="mr-2 h-5 w-5 text-gray-600 dark:text-gray-400" />
+                                    <FaLinkedin className="mr-2 h-5 w-5 text-gray-600 dark:text-gray-400" />
                                     <a
                                         href="https://linkedin.com/in/hynekcerny"
                                         target="_blank"
