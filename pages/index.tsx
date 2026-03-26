@@ -13,11 +13,10 @@ function HomePage() {
     if (sectionId) {
       const targetElement = document.getElementById(sectionId);
       if (targetElement) {
-        // A small delay to ensure the page is painted before scrolling
-        setTimeout(() => {
+        requestAnimationFrame(() => {
           targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
           sessionStorage.removeItem('scrollToSection');
-        }, 100);
+        });
       } else {
         // If the element isn't found for any reason, remove the key
         sessionStorage.removeItem('scrollToSection');

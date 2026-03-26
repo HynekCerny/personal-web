@@ -2,12 +2,6 @@ import { FaLinkedin } from "react-icons/fa6";
 // import { FaQuoteRight, FaQuoteLeft } from "react-icons/fa6";
 // import { QuoteIcon, Quote, MessageSquareQuote } from "lucide-react";
 
-declare global {
-    interface Window {
-      dataLayer: Record<string, unknown>[];
-    }
-  }  
-
 const Hero = () => {
     const handleClick = () => {
         window.dataLayer = window.dataLayer || [];
