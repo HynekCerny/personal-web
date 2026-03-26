@@ -48,52 +48,53 @@ const Header = () => {
     }
   }, []);
 
-  /* Detect scrolling to add shadow to navbar */
+  /* Detect scrolling: navbar shadow + active section (throttled via rAF) */
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  /* Detect which section is active */
-  useEffect(() => {
-    if (!isHomePage) return;
+    let rafId: number | null = null;
 
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
+      if (rafId !== null) return;
+      rafId = requestAnimationFrame(() => {
+        rafId = null;
 
-      if (scrollPosition >= documentHeight - 10) {
-        setActiveSection("contact");
-        return;
-      }
+        setIsScrolled(window.scrollY > 10);
 
-      if (scrollPosition == window.innerHeight) {
-        setActiveSection("");
-        return;
-      }
+        if (!isHomePage) return;
 
-      sections.forEach(({ id }) => {
-        const element = document.getElementById(id);
-        if (!element) return;
+        const scrollPosition = window.scrollY + window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
 
-        const rect = element.getBoundingClientRect();
-        const elementTop = rect.top + window.scrollY;
-
-        if (window.scrollY >= elementTop - 200 && window.scrollY < elementTop + rect.height - 200) {
-          setActiveSection(id);
+        if (scrollPosition >= documentHeight - 10) {
+          setActiveSection("contact");
+          return;
         }
+
+        if (window.scrollY <= 0) {
+          setActiveSection("");
+          return;
+        }
+
+        sections.forEach(({ id }) => {
+          const element = document.getElementById(id);
+          if (!element) return;
+
+          const rect = element.getBoundingClientRect();
+          const elementTop = rect.top + window.scrollY;
+
+          if (window.scrollY >= elementTop - 200 && window.scrollY < elementTop + rect.height - 200) {
+            setActiveSection(id);
+          }
+        });
       });
     };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Run once on load
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
   }, [sections, isHomePage]);
 
   return (
