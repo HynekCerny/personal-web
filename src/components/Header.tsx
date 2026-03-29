@@ -104,7 +104,7 @@ const Header = () => {
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link href={isHomePage ? "#" : "/"} onClick={isHomePage ? (e) => handleSmoothScroll(e, "home") : undefined} className="flex items-center space-x-2">
-          <User className="w-6 h-6 font-bold stroke-[2.5]" />
+          <User className="w-6 h-6 font-bold stroke-[2.5] -translate-y-px" />
           <span className="text-2xl font-medium">Hynek Černý</span>
         </Link>
         <button
