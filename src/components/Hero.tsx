@@ -31,7 +31,7 @@ const Hero = () => {
                         <h2 className="heading pt-2 text-3xl sm:text-4xl text-gray-600 dark:text-gray-300 ">
                             Hynek Černý
                         </h2>
-                        <p className="pl-10 sm:pl-23 text-sm sm:text-base text-gray-500 dark:text-gray-400">
+                        <p className="pl-10 sm:pl-22 text-sm sm:text-base text-gray-500 dark:text-gray-400">
                             IT/Business Analyst
                         </p>
                     </div>
