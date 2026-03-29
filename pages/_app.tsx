@@ -5,7 +5,7 @@ import '../src/index.css';
 import type { AppProps } from 'next/app';
 import { useEffect, useLayoutEffect } from 'react';
 
-const inter = Inter({ subsets: ['latin', 'latin-ext'], variable: '--font-inter' });
+const inter = Inter({ subsets: ['latin', 'latin-ext'] });
 
 function loadGTM(gtmId: string) {
     if (window.dataLayer) return; // Prevent multiple GTM injections
@@ -61,7 +61,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             </Head>
 
 
-            <div className={inter.variable}>
+            <div className={inter.className}>
                 <Component {...pageProps} />
             </div>
         </>

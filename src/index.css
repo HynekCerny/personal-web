@@ -3,7 +3,6 @@
 /* CSS */
 :root {
   @apply bg-white dark:bg-gray-950;
-  font-family: var(--font-inter), Inter, sans-serif;
   font-feature-settings: 'liga' 1, 'calt' 1;
 }
 
