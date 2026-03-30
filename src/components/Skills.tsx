@@ -54,9 +54,9 @@ const Skills = () => {
                     </div>
                 </div>
                 </AnimateOnScroll>
-                <div className="mx-auto grid max-w-5xl gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
+                <div className="skill-cards mx-auto grid max-w-5xl gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
                     {skills.map(({ icon: Icon, title, items }, index) => (
-                        <AnimateOnScroll key={index} animation="fade-slide-in" className={`skill-card-${index}`}>
+                        <AnimateOnScroll key={index} animation="fade-slide-in">
                         <div className="rounded-2xl border border-gray-500 bg-white dark:bg-gray-900 p-6 shadow-sm dark:shadow-sm dark:shadow-gray-800 dark:border-gray-500 hover:bg-blue-50 dark:hover:bg-gray-800 hover:shadow-lg transition-shadow h-full">
                             <div className="flex items-center text-lg font-semibold mb-4">
                                 <Icon className="mr-2 h-5 w-5 text-gray-700 dark:text-gray-400" />
