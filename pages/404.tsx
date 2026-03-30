@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
+import Head from 'next/head';
 import { FileX2 } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -7,6 +8,9 @@ import Footer from '@/components/Footer';
 const Custom404: NextPage = () => {
   return (
     <div className="bg-white text-black dark:text-gray-200 dark:bg-gray-900 flex flex-col min-h-svh">
+      <Head>
+        <meta name="description" content="The page you are looking for does not exist or has been moved." />
+      </Head>
       <Header />
       <main className="flex-grow flex flex-col">
         <section className="fade-in w-full flex flex-col items-center justify-center text-center flex-grow pt-24 md:pt-24 lg:pt-24 pb-20 bg-gradient-to-tr from-blue-100 to-white dark:from-gray-700 dark:to-gray-900">
