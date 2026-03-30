@@ -21,14 +21,14 @@ export default function Experiences() {
                 </div>
                 </AnimateOnScroll>
                 <div className="mx-auto max-w-3xl space-y-8 pt-12 text-left">
-                    <Experience index={0} role='IT/Business Analyst' employer='Partners Banka, a.s.' duration='04/2025 - now' location='Prague' description={[
+                    <Experience role='IT/Business Analyst' employer='Partners Banka, a.s.' duration='04/2025 - now' location='Prague' description={[
                         // 'Collaborating with stakeholders to identify, gather, and document business requirements and technical specifications',
                         // 'Designing and mapping business processes, workflows, and system interactions using various modeling techniques (e.g. BPMN, UML)',
                         // 'Preparing functional specifications and user stories based on business requirements to guide the development process',
                         // 'Analyzing and designing system integrations using REST and RabbitMQ',
                     ]}
                     />
-                    <Experience index={1} role='Chapter Lead - IT/Business Analysis, B2C' employer='RENOMIA, a.s.' duration='08/2022 - 03/2025' location='Prague' description={[
+                    <Experience role='Chapter Lead - IT/Business Analysis, B2C' employer='RENOMIA, a.s.' duration='08/2022 - 03/2025' location='Prague' description={[
                         'Leading team of four analysts in a B2C segment',
                         'Collaborating with stakeholders to identify, gather, and document business requirements and technical specifications',
                         'Serving as the main point of contact between business users, IT teams, and external vendors to ensure clear communication and understanding',
@@ -38,19 +38,19 @@ export default function Experiences() {
                         'Preparing UI mockups using Figma'
                     ]}
                     />
-                    <Experience index={2} role='Chapter Lead - IT Analysis & Design' employer='Česká spořitelna, a.s.' duration='11/2020 - 07/2022' location='Prague' description={[
+                    <Experience role='Chapter Lead - IT Analysis & Design' employer='Česká spořitelna, a.s.' duration='11/2020 - 07/2022' location='Prague' description={[
                         'Leading the IT/Business analysis and design team, ensuring high quality requirements gathering and documentation',
                         'Overseeing the development of activity diagrams and business process models',
                         'Leading business requirements analysis and documentation initiatives on various projects',
                         'Creating and reviewing system specifications using UML methodology'
                     ]}
                     />
-                    <Experience index={3} role='IT/Business Analyst' employer='Česká spořitelna, a.s.' duration='10/2017 - 11/2020' location='Prague' description={[
+                    <Experience role='IT/Business Analyst' employer='Česká spořitelna, a.s.' duration='10/2017 - 11/2020' location='Prague' description={[
                         'Analyzing new system requirements',
                         'Creating and reviewing system specification using UML'
                     ]}
                     />
-                    <Experience index={4} role='Test Manager' employer='Česká spořitelna, a.s.' duration='04/2017 - 02/2018' location='Prague' description={[
+                    <Experience role='Test Manager' employer='Česká spořitelna, a.s.' duration='04/2017 - 02/2018' location='Prague' description={[
                         'Leading team of 5 testers, overseeing all testing operations',
                         'Collaborating with internal and external development teams, analysts, operations specialists, and product owners to ensure the quality of the software',
                         'Creating and maintaining comprehensive test documentation, test cases, and scenarios',
