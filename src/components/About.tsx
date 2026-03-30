@@ -22,7 +22,7 @@ const About = () => {
                 </div>
                 </AnimateOnScroll>
 
-                <AnimateOnScroll delay={200}>
+                <AnimateOnScroll>
                 <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3 lg:gap-18">
                     <div className="flex flex-col justify-center space-y-4 text-left lg:col-span-2">
                         <ul className="grid gap-6">

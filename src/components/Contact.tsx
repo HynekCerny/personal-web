@@ -22,7 +22,7 @@ const Contact = () => {
                     </div>
                 </div>
                 </AnimateOnScroll>
-                <AnimateOnScroll delay={200}>
+                <AnimateOnScroll>
                 <div className="mx-auto grid max-w-xl gap-8 py-12 md:grid-cols-1">
                     <div className="relative border rounded-lg shadow-md bg-white dark:bg-gray-900 dark:border-gray-500">
                         <div className="glowing-line"></div>
