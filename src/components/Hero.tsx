@@ -1,6 +1,7 @@
 import { FaLinkedin } from "react-icons/fa6";
 // import { FaQuoteRight, FaQuoteLeft } from "react-icons/fa6";
 // import { QuoteIcon, Quote, MessageSquareQuote } from "lucide-react";
+import AnimateOnScroll from "./AnimateOnScroll";
 
 const Hero = () => {
     const handleClick = () => {
@@ -13,8 +14,8 @@ const Hero = () => {
     };
 
     return (
-        <section className="relative fade-in w-full flex flex-col items-center sm:items-start text-center sm:text-left mt-14 pt-24 md:pt-24 lg:pt-24 bg-gradient-to-tr from-blue-100 to-white dark:from-gray-700 dark:to-gray-900">
-            <div className="container md:px-10 max-w-screen-xl mx-auto px-4 pb-20">
+        <section className="relative w-full flex flex-col items-center sm:items-start text-center sm:text-left mt-14 pt-24 md:pt-24 lg:pt-24 bg-gradient-to-tr from-blue-100 to-white dark:from-gray-700 dark:to-gray-900">
+            <AnimateOnScroll animation="fade-in" threshold={0} className="container md:px-10 max-w-screen-xl mx-auto px-4 pb-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 
                  
                 gap-6 items-center">
@@ -55,7 +56,7 @@ const Hero = () => {
                         </a>
                     </div>
                 </div>
-            </div>
+            </AnimateOnScroll>
             {/* <div className="absolute bottom-0 left-0 w-full h-px">
                 <div className="glowing-line-full"></div>
             </div> */}
