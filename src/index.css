@@ -43,9 +43,10 @@ html {
   animation: fadeSlideRight 0.8s ease-out forwards;
 }
 
-/* Skill cards: responsive slide directions */
+/* Skill cards: responsive slide directions and stagger */
 /* Only override when element is in view (has fade-slide-in class) */
-/* 1 column (default) + 2 columns (md): alternating left/right */
+
+/* 1 column (default): alternating left/right, no stagger delay */
 .animate-on-scroll.fade-slide-in.skill-card-0,
 .animate-on-scroll.fade-slide-in.skill-card-2,
 .animate-on-scroll.fade-slide-in.skill-card-4 {
@@ -57,19 +58,38 @@ html {
   animation: fadeSlideRight 0.8s ease-out forwards;
 }
 
+/* 2 columns (md): left from left, right from right, stagger within row */
+@media (min-width: 768px) {
+  .animate-on-scroll.fade-slide-in.skill-card-0,
+  .animate-on-scroll.fade-slide-in.skill-card-2,
+  .animate-on-scroll.fade-slide-in.skill-card-4 {
+    animation: fadeSlideLeft 0.8s ease-out forwards;
+    animation-delay: 0ms;
+  }
+  .animate-on-scroll.fade-slide-in.skill-card-1,
+  .animate-on-scroll.fade-slide-in.skill-card-3,
+  .animate-on-scroll.fade-slide-in.skill-card-5 {
+    animation: fadeSlideRight 0.8s ease-out forwards;
+    animation-delay: 100ms;
+  }
+}
+
 /* 3 columns (lg): left from left, middle from bottom, right from right */
 @media (min-width: 1024px) {
   .animate-on-scroll.fade-slide-in.skill-card-0,
   .animate-on-scroll.fade-slide-in.skill-card-3 {
     animation: fadeSlideLeft 0.8s ease-out forwards;
+    animation-delay: 0ms;
   }
   .animate-on-scroll.fade-slide-in.skill-card-1,
   .animate-on-scroll.fade-slide-in.skill-card-4 {
     animation: fadeSlideIn 0.8s ease-out forwards;
+    animation-delay: 100ms;
   }
   .animate-on-scroll.fade-slide-in.skill-card-2,
   .animate-on-scroll.fade-slide-in.skill-card-5 {
     animation: fadeSlideRight 0.8s ease-out forwards;
+    animation-delay: 200ms;
   }
 }
 
