@@ -1,13 +1,12 @@
-// import profileImage from '../../public/assets/profile_square.webp';
 import Image from 'next/image';
-
-// const profileImageUrl = '/assets/profile_square.webp';
 import { User2 } from "lucide-react";
+import AnimateOnScroll from "./AnimateOnScroll";
 
 const About = () => {
     return (
-        <section id="about" className="fade-in w-full justify-center pt-24">
-            <div className="fade-slide-in container md:px-10 max-w-screen-xl mx-auto px-4">
+        <section id="about" className="w-full justify-center pt-24">
+            <div className="container md:px-10 max-w-screen-xl mx-auto px-4">
+                <AnimateOnScroll>
                 <div className="flex flex-col items-center space-y-4 text-center">
                     <div className="space-y-2">
                         <div className="inline-flex items-center rounded-full border px-3.5 py-1 font-semibold dark:border-gray-200">
@@ -21,8 +20,9 @@ const About = () => {
                         </p>
                     </div>
                 </div>
+                </AnimateOnScroll>
 
-
+                <AnimateOnScroll>
                 <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3 lg:gap-18">
                     <div className="flex flex-col justify-center space-y-4 text-left lg:col-span-2">
                         <ul className="grid gap-6">
@@ -70,6 +70,7 @@ const About = () => {
                         /> */}
                     </div>
                 </div>
+                </AnimateOnScroll>
 
             </div>
         </section>

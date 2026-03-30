@@ -22,37 +22,118 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Accessibility: reduce motion */
-@media (prefers-reduced-motion: reduce) {
-  .fade-slide-in,
-  .fade-in {
-    animation: none;
-  }
+/* Scroll-triggered animations */
+.animate-on-scroll {
+  opacity: 0;
 }
 
-/* Fade + Slide */
-.fade-slide-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeSlideIn 0.8s ease-out forwards;
-}
-
-/* Fade Only */
-.fade-in {
-  opacity: 0;
+.animate-on-scroll.fade-in {
   animation: fadeIn 0.8s ease-out forwards;
 }
 
+.animate-on-scroll.fade-slide-in {
+  animation: fadeSlideIn 0.8s ease-out forwards;
+}
+
+.animate-on-scroll.fade-slide-left {
+  animation: fadeSlideLeft 0.8s ease-out forwards;
+}
+
+.animate-on-scroll.fade-slide-right {
+  animation: fadeSlideRight 0.8s ease-out forwards;
+}
+
+/* Skill cards: responsive slide directions and stagger */
+/* Uses nth-child so any number of cards works automatically */
+
+/* 1 column (default): alternating left/right, no stagger delay */
+.skill-cards > :nth-child(odd).animate-on-scroll.fade-slide-in {
+  animation: fadeSlideLeft 0.8s ease-out forwards;
+}
+.skill-cards > :nth-child(even).animate-on-scroll.fade-slide-in {
+  animation: fadeSlideRight 0.8s ease-out forwards;
+}
+
+/* 2 columns (md): left from left, right from right, stagger within row */
+@media (min-width: 768px) {
+  .skill-cards > :nth-child(odd).animate-on-scroll.fade-slide-in {
+    animation: fadeSlideLeft 0.8s ease-out forwards;
+    animation-delay: 0ms;
+  }
+  .skill-cards > :nth-child(even).animate-on-scroll.fade-slide-in {
+    animation: fadeSlideRight 0.8s ease-out forwards;
+    animation-delay: 100ms;
+  }
+}
+
+/* 3 columns (lg): left from left, middle from bottom, right from right */
+@media (min-width: 1024px) {
+  .skill-cards > :nth-child(3n+1).animate-on-scroll.fade-slide-in {
+    animation: fadeSlideLeft 0.8s ease-out forwards;
+    animation-delay: 0ms;
+  }
+  .skill-cards > :nth-child(3n+2).animate-on-scroll.fade-slide-in {
+    animation: fadeSlideIn 0.8s ease-out forwards;
+    animation-delay: 100ms;
+  }
+  .skill-cards > :nth-child(3n+3).animate-on-scroll.fade-slide-in {
+    animation: fadeSlideRight 0.8s ease-out forwards;
+    animation-delay: 200ms;
+  }
+}
+
+/* Fallback: no JS — show content immediately */
+.no-js .animate-on-scroll {
+  opacity: 1;
+}
+
+/* Accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+}
+
 /* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes fadeIn {
+@keyframes fadeSlideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
   to {
     opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeSlideRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

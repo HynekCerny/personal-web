@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { FileX2 } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import AnimateOnScroll from '@/components/AnimateOnScroll';
 
 const Custom404: NextPage = () => {
   return (
@@ -13,8 +14,8 @@ const Custom404: NextPage = () => {
       </Head>
       <Header />
       <main className="flex-grow flex flex-col">
-        <section className="fade-in w-full flex flex-col items-center justify-center text-center flex-grow pt-24 md:pt-24 lg:pt-24 pb-20 bg-gradient-to-tr from-blue-100 to-white dark:from-gray-700 dark:to-gray-900">
-          <div className="fade-slide-in container md:px-10 max-w-screen-xl mx-auto px-4">
+        <section className="w-full flex flex-col items-center justify-center text-center flex-grow pt-24 md:pt-24 lg:pt-24 pb-20 bg-gradient-to-tr from-blue-100 to-white dark:from-gray-700 dark:to-gray-900">
+          <AnimateOnScroll animation="fade-in" threshold={0} className="container md:px-10 max-w-screen-xl mx-auto px-4">
             <div className="flex flex-col items-center justify-center space-y-2">
               <div className="inline-flex items-center rounded-full border px-3.5 py-1 font-semibold dark:border-gray-200">
                 <FileX2 className="mr-2 h-4 w-4" />
@@ -30,7 +31,7 @@ const Custom404: NextPage = () => {
                 Back to Main Page
               </Link>
             </div>
-          </div>
+          </AnimateOnScroll>
         </section>
       </main>
       <Footer />

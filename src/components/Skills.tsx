@@ -1,4 +1,5 @@
 import { Code2, BarChart3, Database, FileSpreadsheet, BriefcaseBusiness, User2 } from "lucide-react";
+import AnimateOnScroll from "./AnimateOnScroll";
 
 const Skills = () => {
     const skills = [
@@ -35,9 +36,10 @@ const Skills = () => {
     ];
 
     return (
-        <section id="skills" className="fade-in w-full justify-center pt-24 md:pt-24 lg:pt-24 bg-gradient-to-tr from-blue-100 to-white dark:from-gray-700 dark:to-gray-900">
-            
-            <div className="fade-slide-in container md:px-10 max-w-screen-xl mx-auto px-4">
+        <section id="skills" className="w-full justify-center pt-24 md:pt-24 lg:pt-24 bg-gradient-to-tr from-blue-100 to-white dark:from-gray-700 dark:to-gray-900">
+
+            <div className="container md:px-10 max-w-screen-xl mx-auto px-4">
+                <AnimateOnScroll>
                 <div className="flex flex-col items-center space-y-4 text-center">
                     <div className="space-y-2">
                         <div className="inline-flex items-center rounded-full border px-3.5 py-1 font-semibold dark:border-gray-200">
@@ -51,9 +53,11 @@ const Skills = () => {
                         </p>
                     </div>
                 </div>
-                <div className="mx-auto grid max-w-5xl gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
+                </AnimateOnScroll>
+                <div className="skill-cards mx-auto grid max-w-5xl gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
                     {skills.map(({ icon: Icon, title, items }, index) => (
-                        <div key={index} className="rounded-2xl border border-gray-500 bg-white dark:bg-gray-900 p-6 shadow-sm dark:shadow-sm dark:shadow-gray-800 dark:border-gray-500 hover:bg-blue-50 dark:hover:bg-gray-800 hover:shadow-lg transition-shadow">
+                        <AnimateOnScroll key={index} animation="fade-slide-in">
+                        <div className="rounded-2xl border border-gray-500 bg-white dark:bg-gray-900 p-6 shadow-sm dark:shadow-sm dark:shadow-gray-800 dark:border-gray-500 hover:bg-blue-50 dark:hover:bg-gray-800 hover:shadow-lg transition-shadow h-full">
                             <div className="flex items-center text-lg font-semibold mb-4">
                                 <Icon className="mr-2 h-5 w-5 text-gray-700 dark:text-gray-400" />
                                 {title}
@@ -69,6 +73,7 @@ const Skills = () => {
                                 ))}
                             </div>
                         </div>
+                        </AnimateOnScroll>
                     ))}
                 </div>
             </div>

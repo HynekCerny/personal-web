@@ -1,15 +1,17 @@
 import { CalendarDays, MapPin } from "lucide-react";
+import AnimateOnScroll from "./AnimateOnScroll";
 
 interface Props {
     role: string,
     employer: string,
     duration: string,
     location: string,
-    description: string[]
+    description: string[],
 }
 
 const Experience = ( {role, employer, duration, location, description} : Props) => {
     return (
+        <AnimateOnScroll>
         <div className="relative pl-8">
         {/* Vertical line */}
         <div className="absolute left-[1px] top-1.5 bottom-0 w-0.5 bg-gray-300 translate-y-[2px]"></div>
@@ -31,6 +33,7 @@ const Experience = ( {role, employer, duration, location, description} : Props) 
             </ul>
         </div>
     </div>
+    </AnimateOnScroll>
     )
 }
 
