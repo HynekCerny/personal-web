@@ -43,42 +43,24 @@ html {
   animation: fadeSlideRight 0.8s ease-out forwards;
 }
 
-/* Skill cards: responsive slide directions and stagger */
+/* Skill cards: slide from left with left-to-right stagger */
 /* Uses nth-child so any number of cards works automatically */
-
-/* 1 column (default): alternating left/right, no stagger delay */
-.skill-cards > :nth-child(odd).animate-on-scroll.fade-slide-in {
+.skill-cards > .animate-on-scroll.fade-slide-in {
   animation: fadeSlideLeft 0.8s ease-out forwards;
 }
-.skill-cards > :nth-child(even).animate-on-scroll.fade-slide-in {
-  animation: fadeSlideRight 0.8s ease-out forwards;
-}
 
-/* 2 columns (md): all from bottom, left-to-right stagger within row */
 @media (min-width: 768px) {
-  .skill-cards > :nth-child(odd).animate-on-scroll.fade-slide-in {
-    animation: fadeSlideIn 0.8s ease-out forwards;
-    animation-delay: 0ms;
-  }
   .skill-cards > :nth-child(even).animate-on-scroll.fade-slide-in {
-    animation: fadeSlideIn 0.8s ease-out forwards;
-    animation-delay: 150ms;
+    animation-delay: 100ms;
   }
 }
 
-/* 3 columns (lg): all from bottom, left-to-right stagger within row */
 @media (min-width: 1024px) {
-  .skill-cards > :nth-child(3n+1).animate-on-scroll.fade-slide-in {
-    animation: fadeSlideIn 0.8s ease-out forwards;
-    animation-delay: 0ms;
-  }
   .skill-cards > :nth-child(3n+2).animate-on-scroll.fade-slide-in {
-    animation: fadeSlideIn 0.8s ease-out forwards;
-    animation-delay: 150ms;
+    animation-delay: 100ms;
   }
   .skill-cards > :nth-child(3n+3).animate-on-scroll.fade-slide-in {
-    animation: fadeSlideIn 0.8s ease-out forwards;
-    animation-delay: 300ms;
+    animation-delay: 200ms;
   }
 }
 
