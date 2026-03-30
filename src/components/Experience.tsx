@@ -7,10 +7,10 @@ interface Props {
     duration: string,
     location: string,
     description: string[],
-    index?: number,
+    index: number,
 }
 
-const Experience = ( {role, employer, duration, location, description, index = 0} : Props) => {
+const Experience = ( {role, employer, duration, location, description, index} : Props) => {
     return (
         <AnimateOnScroll delay={index * 150}>
         <div className="relative pl-8">

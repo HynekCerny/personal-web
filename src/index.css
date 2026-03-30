@@ -73,6 +73,11 @@ html {
   }
 }
 
+/* Fallback: no JS — show content immediately */
+.no-js .animate-on-scroll {
+  opacity: 1;
+}
+
 /* Accessibility: reduce motion */
 @media (prefers-reduced-motion: reduce) {
   .animate-on-scroll {
@@ -83,6 +88,9 @@ html {
 
 /* Keyframes */
 @keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
   to {
     opacity: 1;
   }
