@@ -28,9 +28,9 @@ const Hero = () => {
                         {/* <FaQuoteRight className="inline-block absolute w-18 h-18 -mt-4 -ml-12 -z-30 text-blue-100 dark:text-gray-700"/> */}
                         {/* </h2> */}
                         
-                        <h2 className="heading pt-2 text-3xl sm:text-4xl text-gray-600 dark:text-gray-300 ">
+                        <h1 className="heading pt-2 text-3xl sm:text-4xl text-gray-600 dark:text-gray-300 ">
                             Hynek Černý
-                        </h2>
+                        </h1>
                         <p className="pl-10 sm:pl-22 text-sm sm:text-base text-gray-500 dark:text-gray-400">
                             IT/Business Analyst
                         </p>
@@ -44,14 +44,15 @@ const Hero = () => {
                             <span>View Experience</span>
                         </button>
 
-                        <button
-                            onClick={() => window.open('https://linkedin.com/in/hynekcerny', '_blank', 'noopener,noreferrer')}
+                        <a
+                            href="https://linkedin.com/in/hynekcerny"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="font-medium hover:shadow-none shadow-lg cursor-pointer px-4 lg:px-8 py-3 text-base lg:text-xl bg-blue-700  text-white rounded-lg border-2 border-blue-700  hover:bg-blue-100 dark:hover:bg-gray-800 hover:text-blue-700 dark:hover:text-blue-700 hover:border-blue-700 dark:hover:border-blue-700 transition-colors flex items-center space-x-2 mt-4 md:mt-0 justify-center"
-                            // className="font-medium hover:shadow-none shadow-lg cursor-pointer px-6 py-3 text-base lg:text-xl bg-blue-700 text-white rounded-lg border-2 border-blue-700 hover:bg-blue-800 transition-colors mt-8 md:mt-0 flex items-center space-x-2"
                         >
                             <FaLinkedin className="w-6 h-6" />
                             <span>Get In Touch</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
