@@ -23,7 +23,7 @@ export default function Experiences() {
                 <div className="mx-auto max-w-3xl space-y-8 pt-12 text-left">
                     <Experience role='IT/Business Analyst' employer='Partners Banka, a.s.' duration='04/2025 - now' location='Prague' description={[
                         'Designing solutions for card issuance, management, tokenization and payment authorization',
-                        'Developing and integrating crypto trading solutions into the bank’s mobile app',
+                        'Analyzing requirements and integrations for crypto trading in the bank’s mobile app',
                     ]}
                     />
                     <Experience role='Chapter Lead - IT/Business Analysis, B2C' employer='RENOMIA, a.s.' duration='08/2022 - 03/2025' location='Prague' description={[
