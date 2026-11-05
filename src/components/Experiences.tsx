@@ -22,10 +22,8 @@ export default function Experiences() {
                 </AnimateOnScroll>
                 <div className="mx-auto max-w-3xl space-y-8 pt-12 text-left">
                     <Experience role='IT/Business Analyst' employer='Partners Banka, a.s.' duration='04/2025 - now' location='Prague' description={[
-                        // 'Collaborating with stakeholders to identify, gather, and document business requirements and technical specifications',
-                        // 'Designing and mapping business processes, workflows, and system interactions using various modeling techniques (e.g. BPMN, UML)',
-                        // 'Preparing functional specifications and user stories based on business requirements to guide the development process',
-                        // 'Analyzing and designing system integrations using REST and RabbitMQ',
+                        'Working on solutions for payment card issuance and management, including card tokenization and card payment authorization',
+                        'Working on the development and integration of solutions for buying and selling crypto assets in the bank’s mobile app',
                     ]}
                     />
                     <Experience role='Chapter Lead - IT/Business Analysis, B2C' employer='RENOMIA, a.s.' duration='08/2022 - 03/2025' location='Prague' description={[
