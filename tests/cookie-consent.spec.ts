@@ -27,7 +27,7 @@ test('explicit opt-in, remembered rejection and withdrawal control analytics', a
   await expect(page.getByRole('region', { name: 'Cookie preferences' })).toBeHidden();
   expect(requests).toEqual([]);
   await page.getByRole('button', { name: 'Cookie settings', exact: true }).click();
-  await page.getByRole('button', { name: 'Allow analytics', exact: true }).click();
+  await page.getByRole('button', { name: 'Accept analytics', exact: true }).click();
   await expect.poll(() => requests.length).toBe(1);
   expect(await page.evaluate(() => Array.from(window.dataLayer[0] as IArguments))).toEqual([
     'consent', 'default', {

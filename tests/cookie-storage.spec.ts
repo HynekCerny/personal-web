@@ -12,7 +12,7 @@ for (const [index, value] of ['invalid-json', JSON.stringify({ choice: 'granted'
 test('withdrawal survives readable storage whose writes fail', async ({ page }) => {
   await page.route('https://www.googletagmanager.com/**', route => route.fulfill({ contentType: 'application/javascript', body: '' }));
   await page.goto('/');
-  await page.getByRole('button', { name: 'Allow analytics', exact: true }).click();
+  await page.getByRole('button', { name: 'Accept analytics', exact: true }).click();
   await expect(page.locator('#consented-gtm')).toHaveCount(1);
   await page.addInitScript(() => {
     const original = Storage.prototype.setItem;
@@ -37,8 +37,8 @@ test('withdrawal survives all storage writes and removals failing and permits la
     analyticsRequests++;
     return route.fulfill({ contentType: 'application/javascript', body: '' });
   });
-  await page.goto('/privacy?source=test#privacy');
-  await page.getByRole('button', { name: 'Allow analytics', exact: true }).click();
+  await page.goto('/?source=test#privacy');
+  await page.getByRole('button', { name: 'Accept analytics', exact: true }).click();
   await expect(page.locator('#consented-gtm')).toHaveCount(1);
   await page.addInitScript(() => {
     const setItem = Storage.prototype.setItem;
@@ -67,8 +67,9 @@ test('withdrawal survives all storage writes and removals failing and permits la
   expect(new URL(page.url()).hash).toBe('#privacy');
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem('cookie-consent-v1')!).choice)).toBe('granted');
   await page.getByRole('button', { name: 'Cookie settings', exact: true }).click();
+  await page.getByRole('button', { name: 'Details', exact: true }).click();
   await expect(page.getByText('Analytics is currently off.', { exact: true })).toBeVisible();
-  await page.getByRole('button', { name: 'Allow analytics', exact: true }).click();
+  await page.getByRole('button', { name: 'Accept analytics', exact: true }).click();
   await expect(page.locator('#consented-gtm')).toHaveCount(1);
   await page.reload();
   await expect(page.locator('#consented-gtm')).toHaveCount(1);

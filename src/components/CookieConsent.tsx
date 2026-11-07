@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import CookieDetails from './CookieDetails';
 
 const STORAGE_KEY = 'cookie-consent-v1';
 const DENIAL_PARAM = 'analytics-consent';
@@ -55,6 +56,7 @@ function loadAnalytics() {
 export default function CookieConsent() {
   const [choice, setChoice] = useState<Choice | null>(null);
   const [open, setOpen] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
   const [ready, setReady] = useState(false);
   const settingsRef = useRef<HTMLButtonElement>(null);
 
@@ -118,6 +120,7 @@ export default function CookieConsent() {
     }
     setChoice(next);
     setOpen(false);
+    setShowDetails(false);
     if (next === 'granted') loadAnalytics();
     else {
       clearAnalyticsCookies();
@@ -131,7 +134,7 @@ export default function CookieConsent() {
   }
 
   if (!ready) return null;
-  const buttonStyle = 'rounded-lg border border-blue-700 px-4 py-2.5 text-sm font-semibold text-blue-800 transition-colors hover:bg-blue-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600 dark:border-blue-400 dark:text-blue-200 dark:hover:bg-gray-800';
+  const buttonStyle = 'font-medium hover:shadow-none shadow-lg cursor-pointer px-4 py-2 text-sm bg-white dark:bg-gray-800 text-blue-700 dark:text-gray-300 border-2 border-blue-700 dark:border-gray-400 rounded-lg dark:hover:text-blue-700 dark:hover:border-blue-700 hover:bg-blue-100 dark:hover:bg-gray-800 transition-colors min-h-11 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600';
 
   return (
     <>
@@ -139,19 +142,19 @@ export default function CookieConsent() {
         <button ref={settingsRef} type="button" onClick={() => setOpen(true)} aria-expanded={open} aria-controls="cookie-preferences" className="rounded text-sm text-gray-600 underline underline-offset-4 hover:text-blue-700 focus-visible:outline-2 focus-visible:outline-offset-4 dark:text-gray-300">Cookie settings</button>
       </div>
       {open && (
-        <section id="cookie-preferences" aria-label="Cookie preferences" className="fixed bottom-4 left-4 right-4 z-50 mx-auto max-h-[calc(100dvh-2rem)] max-w-screen-xl overflow-y-auto rounded-xl border border-blue-200 bg-white p-5 text-gray-900 shadow-xl md:p-6 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-200">
-          <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-2xl">
-              <h2 className="text-lg font-semibold">Your privacy, your choice</h2>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">With your permission, Google Analytics uses cookies to measure visits and help improve this website. Until you allow it, Google Analytics and Google Tag Manager stay off. Rejecting does not affect the website.</p>
-              <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">Your choice is saved on this device for 180 days. Change or withdraw it at any time in Cookie settings. <a href="/privacy" className="text-blue-700 underline underline-offset-2 dark:text-blue-300">Privacy & cookies</a></p>
-              {choice && <p className="mt-2 text-sm">Analytics is currently {choice === 'granted' ? 'on' : 'off'}.</p>}
-            </div>
-            <div className="flex shrink-0 flex-col gap-3 sm:flex-row lg:flex-col">
-              <button type="button" onClick={() => choose('denied')} className={buttonStyle}>Reject analytics</button>
-              <button type="button" onClick={() => choose('granted')} className={buttonStyle}>Allow analytics</button>
+        <section id="cookie-preferences" aria-label="Cookie preferences" className="fixed bottom-3 left-3 right-3 z-50 mx-auto max-h-[calc(100dvh-1.5rem)] max-w-screen-xl overflow-y-auto rounded-lg border border-gray-200 bg-white p-3 text-gray-900 shadow-lg sm:px-4 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-200">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+              Google Analytics uses cookies to measure visits. Only with your consent.{' '}
+              <button type="button" onClick={() => setShowDetails(!showDetails)} aria-expanded={showDetails} aria-controls="cookie-details" className="cursor-pointer rounded underline underline-offset-2 hover:text-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 dark:hover:text-blue-300">Details</button>
+            </p>
+            <div className="flex shrink-0 gap-3">
+              <button type="button" aria-label="Reject analytics" onClick={() => choose('denied')} className={buttonStyle}>Reject</button>
+              <button type="button" aria-label="Accept analytics" onClick={() => choose('granted')} className={buttonStyle}>Accept</button>
             </div>
           </div>
+          {showDetails && <CookieDetails />}
+          {showDetails && choice && <p className="mt-2 text-sm">Analytics is currently {choice === 'granted' ? 'on' : 'off'}.</p>}
         </section>
       )}
     </>
