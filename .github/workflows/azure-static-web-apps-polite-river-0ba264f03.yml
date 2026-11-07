@@ -37,6 +37,10 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run lint
+      - name: Install Test Browser
+        run: npx playwright install --with-deps chromium
+      - name: Test Cookie Consent
+        run: npm test
 
   build_and_deploy_job:
     if: github.event_name == 'push' || github.event.action != 'closed'

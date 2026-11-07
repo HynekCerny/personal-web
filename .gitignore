@@ -27,6 +27,9 @@ dist-ssr
 # build output
 /.next/
 /out/
+/test-results/
+/playwright-report/
+*.tsbuildinfo
 
 # local env files
 .env.local

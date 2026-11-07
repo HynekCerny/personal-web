@@ -1,3 +1,4 @@
+import CookieConsent from '../src/components/CookieConsent';
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
 import '../src/App.css';
@@ -7,20 +8,7 @@ import { useEffect, useLayoutEffect } from 'react';
 
 const inter = Inter({ subsets: ['latin', 'latin-ext'] });
 
-function loadGTM(gtmId: string) {
-    if (window.dataLayer) return; // Prevent multiple GTM injections
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtm.js?id=${gtmId}`;
-    document.head.appendChild(script);
-}
-
 function MyApp({ Component, pageProps }: AppProps) {
-    useEffect(() => {
-        loadGTM('GTM-5Z8HWR2W');
-    }, []);
 
     useLayoutEffect(() => {
         const scrollPosition = sessionStorage.getItem('scrollPosition');
@@ -98,6 +86,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
             <div className={inter.className}>
                 <Component {...pageProps} />
+                <CookieConsent />
             </div>
         </>
     );
