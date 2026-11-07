@@ -40,3 +40,18 @@ test('privacy details expand in place without leaving the page', async ({ page }
   await expect(page.getByRole('heading', { name: 'Privacy & cookies', exact: true })).toBeHidden();
   expect(await page.locator('#consented-gtm').count()).toBe(0);
 });
+
+test('privacy details use short plain-language information, not implementation details', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Details', exact: true }).click();
+  const details = page.locator('#cookie-details');
+  const text = await details.innerText();
+  expect(text.trim().split(/\s+/).length).toBeLessThanOrEqual(170);
+  expect(text).not.toMatch(/_ga|cookie-consent-v1|Tag Manager|session storage|URL|reload|fallback|advertising consent signals/i);
+  for (const essential of ['Hynek Černý', 'Google Ireland Limited', 'consent', '180 days', 'two years', 'Cookie settings']) {
+    expect(text).toContain(essential);
+  }
+  await expect(details.getByRole('link', { name: 'jsem@hynekcerny.cz' })).toHaveAttribute('href', 'mailto:jsem@hynekcerny.cz');
+  await expect(details.getByRole('link', { name: /Google/ })).toHaveAttribute('href', 'https://policies.google.com/privacy');
+  await expect(details.getByRole('link', { name: /Úřad/ })).toHaveAttribute('href', 'https://uoou.gov.cz/');
+});
