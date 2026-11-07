@@ -145,10 +145,10 @@ export default function CookieConsent() {
         <section id="cookie-preferences" aria-label="Cookie preferences" className="fixed bottom-3 left-3 right-3 z-50 mx-auto max-h-[calc(100dvh-1.5rem)] max-w-screen-xl overflow-y-auto rounded-lg border border-gray-200 bg-white p-3 text-gray-900 shadow-lg sm:px-4 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-200">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-              Google Analytics uses cookies to measure visits. Only with your consent.{' '}
+              With your consent, we use cookies to understand visits and improve this website.{' '}
               <button type="button" onClick={() => setShowDetails(!showDetails)} aria-expanded={showDetails} aria-controls="cookie-details" className="cursor-pointer rounded underline underline-offset-2 hover:text-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 dark:hover:text-blue-300">Details</button>
             </p>
-            <div className="flex shrink-0 gap-3">
+            <div className="flex shrink-0 justify-center gap-3">
               <button type="button" aria-label="Reject analytics" onClick={() => choose('denied')} className={buttonStyle}>Reject</button>
               <button type="button" aria-label="Accept analytics" onClick={() => choose('granted')} className={buttonStyle}>Accept</button>
             </div>

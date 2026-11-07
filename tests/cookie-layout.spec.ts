@@ -16,6 +16,9 @@ test('minimal banner fits a short mobile screen with actions side by side', asyn
   expect(a.y).toBe(b.y);
   expect(a.height).toBeGreaterThanOrEqual(44);
   expect(b.x).toBeGreaterThan(a.x);
+  expect(Math.abs((a.x + b.x + b.width) / 2 - (box.x + box.width / 2))).toBeLessThanOrEqual(1);
+  await expect(banner).toContainText('With your consent, we use cookies to understand visits and improve this website.');
+  await expect(banner).not.toContainText('Google Analytics');
   for (const button of [reject, accept]) {
     const styles = await button.evaluate(el => {
       const css = getComputedStyle(el);
